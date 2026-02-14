@@ -1,0 +1,93 @@
+# =========================
+# Java
+# =========================
+*.class
+*.log
+*.ctxt
+
+# =========================
+# Maven
+# =========================
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+
+# =========================
+# Eclipse
+# =========================
+.metadata/
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.project
+.classpath
+
+# =========================
+# IntelliJ IDEA (optional)
+# =========================
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# =========================
+# VS Code (optional)
+# =========================
+.vscode/
+
+# =========================
+# OS Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Logs
+# =========================
+logs/
+*.log
+
+# =========================
+# Database
+# =========================
+*.db
+*.sqlite
+*.sqlite3
+
+# =========================
+# Environment / Secrets
+# =========================
+.env
+.env.*
+*.properties.local
+
+# =========================
+# Selenium
+# =========================
+selenium-screenshots/
+screenshots/
+
+# =========================
+# Test Reports
+# =========================
+test-output/
+allure-results/
+allure-report/
+
+# =========================
+# Temporary Files
+# =========================
+temp/
+tmp/
+*.temp
