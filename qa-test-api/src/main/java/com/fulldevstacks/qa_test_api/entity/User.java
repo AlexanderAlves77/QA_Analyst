@@ -1,29 +1,45 @@
 package com.fulldevstacks.qa_test_api.entity;
 
+
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.time.LocalDateTime;
+import org.hibernate.annotations.UpdateTimestamp;
+import org.hibernate.annotations.CreationTimestamp;
 
 @Entity 
 @Table(name = "users")
+@Data 
+@NoArgsConstructor
 public class User 
 {
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
+	@Column(nullable = false, length = 100)
 	private String name;
 	
+	@Column(nullable = false, unique = true, length = 100)
+	private String email;
+	
+	@Column(name = "job_title", length = 100)
 	private String job;
 	
-	public User() {}
-
-	public Integer getId() { return id; }
+	@Column(length = 20)
+	private String phone;
 	
-	public void setId(Integer id) { this.id = id; }
+	private Integer age;
 	
-	public String getName() { return name; }
+	@Column(name = "active")
+	private boolean active = true;
 	
-	public void setName(String name) { this.name = name; }
+	@CreationTimestamp
+	@Column(name = "created_at", updatable = false)
+	private LocalDateTime createdAt;
 	
-	public String getJob() { return job; }
-	
-	public void setJob(String job) { this.job = job; }
+	@UpdateTimestamp
+	@Column(name = "updated_at")
+	private LocalDateTime updatedAt;
 }
