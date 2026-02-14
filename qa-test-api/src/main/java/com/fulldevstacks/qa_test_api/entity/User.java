@@ -33,7 +33,7 @@ public class User
 	private Integer age;
 	
 	@Column(name = "active")
-	private boolean active = true;
+	private Boolean active = true;
 	
 	@CreationTimestamp
 	@Column(name = "created_at", updatable = false)
