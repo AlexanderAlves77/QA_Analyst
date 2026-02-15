@@ -16,7 +16,7 @@ public class UserRequestDTO
 	
 	private String jobTitle;
 	
-	@Pattern(regexp = "\\(?\\d{2}\\)?\\s?\\d{4,5}-?\\d{4}", message = "Invalid phone format")
+	@Pattern(regexp = "\\(?\\d{2}\\)?\\s?\\d{4,5}-?\\d{4}", message = "Invalid phone format. Use (XX) XXXXX-XXXX")
 	private String phone;
 	
 	@Min(value = 18, message = "Age must be at least 18")
