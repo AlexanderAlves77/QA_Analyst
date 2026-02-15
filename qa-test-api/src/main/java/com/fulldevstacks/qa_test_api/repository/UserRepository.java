@@ -10,16 +10,18 @@ import org.springframework.stereotype.Repository;
 import com.fulldevstacks.qa_test_api.entity.User;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Integer>
+public interface UserRepository extends JpaRepository<User, Long>
 {
+	Optional<User> findById(Long id);
+	
 	Optional<User> findByEmail(String email);
 	
 	List<User> findByNameContainingIgnoreCase(String name);
 	
 	List<User> findByActiveTrue();
 	
-	@Query("SELECT u FROM User WHERE u.age >= :minAge AND u.age <= :maxAge")
-	List<User> findByAgeBetween(@Param("mnAge") Integer minAge, @Param("maxAge") Integer maxAge);
+	@Query("SELECT u FROM User u WHERE u.age >= :minAge AND u.age <= :maxAge")
+	List<User> findByAgeBetween(@Param("minAge") Integer minAge, @Param("maxAge") Integer maxAge);
 	
 	boolean existsByEmail(String email);
 	
