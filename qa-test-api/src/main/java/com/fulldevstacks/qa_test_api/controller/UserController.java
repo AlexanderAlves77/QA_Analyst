@@ -73,7 +73,7 @@ public class UserController
 	@GetMapping("/active")
 	public ResponseEntity<List<UserResponseDTO>> getActiveUsers()
 	{
-		List<UserResponseDTO> users = userRepository.findActiveTrue()
+		List<UserResponseDTO> users = userRepository.findByActiveTrue()
 				.stream()
 				.map(UserResponseDTO::fromEntity)
 				.collect(Collectors.toList());
@@ -149,11 +149,11 @@ public class UserController
 	
 	
 	@GetMapping("/count")
-	public ResponseEntity<Void> countUsers(@RequestParam(required = false) Boolean active)
+	public ResponseEntity<Long> countUsers(@RequestParam(required = false) Boolean active)
 	{
 		if (active != null) {
-			return ResponseEntity.ok(UserResponseDTO.countByActive(active));
+			return ResponseEntity.ok(userRepository.countByActive(active));
 		}
-		return ResponseEntity.ok(userRespository.count());
+		return ResponseEntity.ok(userRepository.count());
 	}
 }
