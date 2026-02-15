@@ -15,7 +15,7 @@ public class UserResponseDTO
 	private Integer age;
 	private Boolean active;
 	private LocalDateTime createdAt;
-	private LocalDateTime updatedAt;
+	private LocalDateTime updatedAt;	
 	
 	public static UserResponseDTO fromEntity(User user)
 	{

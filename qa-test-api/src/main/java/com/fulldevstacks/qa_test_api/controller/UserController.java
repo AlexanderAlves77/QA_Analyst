@@ -18,22 +18,21 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/users")
-@CrossOrigin(origins = "")
+@CrossOrigin(origins = "*")
 public class UserController 
 {
 	@Autowired
 	private UserRepository userRepository;
 	
 	@PostMapping
-	public ResponseEntity<UserRepository> createUser(@Valid @RequestBody UserRequestDTO userRequest)
+	public ResponseEntity<UserResponseDTO> createUser(@Valid @RequestBody UserRequestDTO userRequest)
 	{
 		// Verificar se email já existe
 		if (userRepository.existsByEmail(userRequest.getEmail())) {
 			throw new ResponseStatusException(HttpStatus.CONFLICT, "Email already exists");
 		}
 		
-		User user = new User();
-		user.setId(userRequest.getId());
+		User user = new User();		
 		user.setName(userRequest.getName());
 		user.setEmail(userRequest.getEmail());
 		user.setJobTitle(userRequest.getJobTitle());
