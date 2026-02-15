@@ -1,9 +1,7 @@
 package com.fulldevstacks.qa_test_api.dto;
 
 import java.time.LocalDateTime;
-
 import com.fulldevstacks.qa_test_api.entity.User;
-
 import lombok.Data;
 
 @Data
