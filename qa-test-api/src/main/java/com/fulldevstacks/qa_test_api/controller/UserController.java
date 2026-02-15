@@ -62,7 +62,7 @@ public class UserController
 		return ResponseEntity.ok(UserResponseDTO.fromEntity(user));		
 	}
 	
-	@GetMapping("/{email}")
+	@GetMapping("/email/{email}")
 	public ResponseEntity<UserResponseDTO> getUserByEmail(@PathVariable String email)
 	{
 		User user = userRepository.findByEmail(email)
