@@ -20,7 +20,7 @@ public class UserRequestDTO
 	private String phone;
 	
 	@Min(value = 18, message = "Age must be at least 18")
-	@Min(value = 120, message = "Age must be at most 120")
+	@Max(value = 120, message = "Age must be at most 120")
 	private Integer age;
 	
 	private Boolean active = true;
