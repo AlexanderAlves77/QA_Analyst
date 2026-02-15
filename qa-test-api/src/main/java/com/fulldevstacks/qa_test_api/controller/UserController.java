@@ -137,7 +137,7 @@ public class UserController
 		return ResponseEntity.ok(UserResponseDTO.fromEntity(updateUser));
 	}
 	
-	@GetMapping("/{id}")
+	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> deleteUser(@PathVariable Long id)
 	{
 		User user = userRepository.findById(id)
