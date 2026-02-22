@@ -1,6 +1,6 @@
 # QA Analyst Portfolio
 
-This repository contains a collection of Quality Assurance projects developed to demonstrate advanced skills in test automation, software testing, and QA engineering best practices. The focus is on building robust, maintainable, and scalable test frameworks.
+This repository contains a collection of high-level Quality Assurance projects. The focus is on building robust, maintainable, and scalable test frameworks that cover the entire software development lifecycle—from raw data integrity to final UI rendering.
 
 ---
 
@@ -9,12 +9,12 @@ This repository contains a collection of Quality Assurance projects developed to
 ```
 QA_Analyst/
 │
-├── qa-e2e-automation-suite/ # End-to-End UI Automation (Selenium, TestNG)
-├── qa-test-api/ # API & Database Automation (RestAssured, Hibernate, MySQL)
-├── data-driven-framework/ # Data-Driven Testing Framework (Core Utilities)
-├── qa-performance-tests/ # Performance and load testing (For the Future)
-├── qa-mobile-tests/ # Mobile test automation (For the Future)
-└── docs/ # Documentation and resources (For the Future)
+├── qa-ml-quality-engineering/  # ML Data & UI Integrity (Java 21, Allure, Selenium)
+├── qa-e2e-automation-suite/    # End-to-End UI Automation (Selenium, TestNG)
+├── qa-test-api/                # API & Database Automation (RestAssured, Hibernate, MySQL)
+├── data-driven-framework/      # Data-Driven Testing Engine (Core Utilities)
+├── qa-performance-tests/       # Performance and load testing (Roadmap)
+└── qa-mobile-tests/            # Mobile test automation (Roadmap)
 ```
 
 ---
@@ -23,6 +23,15 @@ QA_Analyst/
 
 ## Projects Overview
 
+### 🆕 qa-ml-quality-engineering (Current Highlight)
+Specialized framework for Quality Engineering in Machine Learning ecosystems.
+* **Context:** Validation of a Credit Card Fraud Detection system.
+* **Tech Stack:** Java 21, Maven, Selenium WebDriver 4, Allure Report, AssertJ.
+* **Key Capabilities:** * **Data Integrity:** Validation of CSV datasets (schema, null values, and data types).
+    * **Statistical Analysis:** Class distribution testing to ensure fraud/legitimate balance.
+    * **UI/Data Consistency:** Selenium tests ensuring the Dashboard reflects the ML model results.
+    * **Observability:** Advanced Allure integration with categories, severity levels, and rich attachments (logs and charts).
+	
 ### qa-e2e-automation-suite
 End-to-End test automation framework for web applications.
 *   **Tech Stack:** Java, Maven, Selenium WebDriver, TestNG.
