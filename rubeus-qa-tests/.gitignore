@@ -1,0 +1,47 @@
+# Compiled class files
+*.class
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+
+# Eclipse
+.project
+.classpath
+.settings/
+.metadata/
+
+# IntelliJ
+.idea/
+*.iml
+
+# VSCode
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Selenium
+selenium-screenshots/
+screenshots/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Test reports
+surefire-reports/
+test-output/
+
+# WebDriver binaries
+drivers/
