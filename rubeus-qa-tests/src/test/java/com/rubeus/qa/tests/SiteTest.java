@@ -3,84 +3,81 @@ package com.rubeus.qa.tests;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import com.rubeus.qa.base.BaseTest;
+import com.rubeus.qa.pages.SitePage;
 
 /**
  * SiteTest
  *
- * Automated tests for the Site page:
- * https://qualidade.apprbs.com.br/site
+ * Refactored test using Page Object Model (POM).
  *
  * Test coverage:
  * - Page accessibility
+ * - Page load validation
  * - URL validation
- * - Page title validation
- * - Page content verification
+ * - Title validation
+ * - Content validation
  */
 public class SiteTest extends BaseTest
 {
-	private static final String URL = "https://qualidade.apprbs.com.br/site";
+	private SitePage sitePage;
 	
 	/**
-     * Test if the Site page loads successfully
+     * Initialize SitePage before each test
+     */
+	@BeforeEach 
+	public void initPage()
+	{
+		sitePage = new SitePage(driver);
+		sitePage.open();
+	}
+	
+	/**
+     * Test if page loads successfully
      */
 	@Test 
 	public void testPageLoadsSuccessfully() 
 	{
-		driver.get(URL);
-		
-		String currentUrl = driver.getCurrentUrl();
-		
-		assertEquals(URL, currentUrl, "The Site page did not load correctly or URL mismatch occurred.");
+		assertTrue(sitePage.isPageLoaded(),
+    			"Site page did not load correctly.");
 	}
 	
 	/**
-     * Test if the page title is valid
+     * Test if URL is correct
      */
 	@Test 
-	public void testPageTitleIsNotEmpty() 
+	public void testPageUrlIsCorrect() 
 	{
-		driver.get(URL);
+		String expectedUrl = "https://qualidade.apprbs.com.br/site";
 		
-		String title = driver.getTitle();
-		
-		assertTrue(title != null && !title.isEmpty(), "The page title should not be null or empty.");
+		assertEquals(expectedUrl,
+				sitePage.getPageUrl(),
+				"Site page URL is incorrect.");
 	}
 	
 	/**
-     * Test if the page contains expected content
+     * Test if page title is valid
      */
 	@Test 
-	public void testPageContainsExpectedContent() 
+	public void testPageTitleIsValid() 
 	{
-		driver.get(URL);
+		String title = sitePage.getTitle();
 		
-		String pageSource = driver.getPageSource();
-		
-		assertTrue(
-				pageSource.contains("Site") || 
-				pageSource.contains("Bem-vindo") ||
-				pageSource.contains("Qualidade"), 
-				"The Site page does not contain expected content.");
+		assertTrue(title != null &&
+				!title.isEmpty(), 
+				"Site page title should not be null or empty.");
 	}
 	
 	/**
-     * Test if the page loads within acceptable time
+     * Test if expected content exists
      */
 	@Test 
-	public void testPageLoadPerformance() 
+	public void testExpectedContentExists() 
 	{
-		long startTime = System.currentTimeMillis();
-		
-		driver.get(URL);
-		
-		long endTime = System.currentTimeMillis();
-		
-		long loadTime = startTime - endTime;
-		
-		assertTrue(loadTime < 10000, 
-				"The page took too long to load: " + loadTime + " ms");
+		assertTrue(sitePage.containsCertificationText(),
+				"Expected content was not found on Site page.");
 	}
 }

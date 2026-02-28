@@ -3,6 +3,9 @@ package com.rubeus.qa.tests;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.BeforeEach;
+
 import com.rubeus.qa.base.BaseTest;
 import com.rubeus.qa.pages.CertificacaoPage;
 
@@ -25,7 +28,7 @@ public class CertificacaoTest extends BaseTest
 	/**
      * Initialize page object before each test
      */
-	@Test 
+	@BeforeEach 
 	public void initPage() 
 	{
 		certificacaoPage = new CertificacaoPage(driver);
