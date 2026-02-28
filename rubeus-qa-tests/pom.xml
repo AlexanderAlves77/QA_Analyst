@@ -14,6 +14,7 @@
         <junit.version>5.10.2</junit.version>
         <webdrivermanager.version>5.8.0</webdrivermanager.version>
         <extentreports.version>5.1.1</extentreports.version>
+        <log4j.version>2.23.1</log4j.version>
     </properties>
     
     <dependencies>
@@ -44,6 +45,18 @@
 		    <groupId>com.aventstack</groupId>
 		    <artifactId>extentreports</artifactId>
 		    <version>${extentreports.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.apache.logging.log4j</groupId>
+		    <artifactId>log4j-api</artifactId>
+		    <version>${log4j.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.apache.logging.log4j</groupId>
+		    <artifactId>log4j-core</artifactId>
+		    <version>${log4j.version}</version>
 		</dependency>
 
     </dependencies>
