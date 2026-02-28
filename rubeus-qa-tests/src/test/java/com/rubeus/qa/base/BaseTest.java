@@ -7,6 +7,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import com.rubeus.qa.utils.TestUtils;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 /**
@@ -30,15 +32,15 @@ public class BaseTest
 	@BeforeEach
 	public void setUp()
 	{
+		// Setup ChromeDriver automatically
 		WebDriverManager.chromedriver().setup();
 		
+		// Initialize driver
 		driver = new ChromeDriver();
 		
-		driver.manage().window().maximize();
-		
+		// Browser configuration
+		driver.manage().window().maximize();		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
 	}
 	
 	/**
@@ -49,5 +51,10 @@ public class BaseTest
 	{
 		if (driver != null) 
 			driver.quit();
+	}
+	
+	protected WebDriver getDriver() 
+	{
+		return driver;
 	}
 }
