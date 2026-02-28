@@ -4,61 +4,76 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import com.rubeus.qa.base.BaseTest;
+import com.rubeus.qa.pages.CertificacaoPage;
 
 /**
  * CertificacaoTest
  *
- * Automated tests for the Certificacao page:
- * https://qualidade.apprbs.com.br/certificacao
+  * Refactored test using Page Object Model (POM).
  *
- * Test coverage:
+ * This test validates:
  * - Page accessibility
- * - Page title validation
- * - URL validation
- * - Page load confirmation
+ * - Page load success
+ * - URL correctness
+ * - Title validity
+ * - Certification content presence
  */
 public class CertificacaoTest extends BaseTest
 {
-	private static final String URL = "https://qualidade.apprbs.com.br/certificacao";
+	private CertificacaoPage certificacaoPage;
 	
 	/**
-     * Test if the Certificacao page loads successfully
+     * Initialize page object before each test
      */
 	@Test 
-	public void testPageLoadsSuccessfully() 
+	public void initPage() 
 	{
-		driver.get(URL);
-		
-		String currentUrl = driver.getCurrentUrl();
-		
-		assertEquals(URL, currentUrl, "The page URL is incorrect or did not load properly.");
+		certificacaoPage = new CertificacaoPage(driver);
+		certificacaoPage.open();
 	}
 	
 	/**
-     * Test if the page title is present
+     * Test if page loads successfully
+     */
+    @Test
+    public void testPageLoadsSuccessfully()
+    {
+    	assertTrue(certificacaoPage.isPageLoaded(),
+    			"Certificacao page did not load correctly.");
+    }
+	
+	/**
+     * Test if URL is correct
      */
 	@Test 
-	public void testPageTitleIsNotEmpty() 
+	public void testPageUrlIsCorrect() 
 	{
-		driver.get(URL);
+		String expectedUrl = "https://qualidade.apprbs.com.br/certificacao";
 		
-		String title = driver.getTitle();
-		
-		assertTrue(title != null && !title.isEmpty(), "The page title should not be null or empty.");
+		assertEquals(expectedUrl,
+				certificacaoPage.getPageUrl(),
+				"Page URL is incorrect.");
 	}
 	
 	/**
-     * Test if the page source contains expected content
+     * Test if page title is valid
      */
 	@Test 
-	public void testPageContainsExpectedContent() 
+	public void testPageTitleIsValid() 
 	{
-		driver.get(URL);
+		String title = certificacaoPage.getTitle();
 		
-		String pageSource = driver.getPageSource();
-		
-		assertTrue(pageSource.contains("Certificação") || 
-				pageSource.contains("Certificacao"), 
-				"The page does not contain expected certification content.");
+		assertTrue(title != null &&
+				!title.isEmpty(), 
+				"Page title should not be null or empty.");
+	}
+	
+	/**
+     * Test if certification content exists
+     */
+	public void testCertificationContentExists() 
+	{
+		assertTrue(certificacaoPage.containsCertificationText(),
+				"Certification content was not found on the page.");
 	}
 }
