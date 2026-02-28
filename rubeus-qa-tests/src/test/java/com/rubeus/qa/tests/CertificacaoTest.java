@@ -27,7 +27,7 @@ public class CertificacaoTest extends BaseTest
 	@Test 
 	public void testPageLoadsSuccessfully() 
 	{
-		driver.get(URL);;
+		driver.get(URL);
 		
 		String currentUrl = driver.getCurrentUrl();
 		
@@ -40,7 +40,7 @@ public class CertificacaoTest extends BaseTest
 	@Test 
 	public void testPageTitleIsNotEmpty() 
 	{
-		driver.get(URL);;
+		driver.get(URL);
 		
 		String title = driver.getTitle();
 		
@@ -53,7 +53,7 @@ public class CertificacaoTest extends BaseTest
 	@Test 
 	public void testPageContainsExpectedContent() 
 	{
-		driver.get(URL);;
+		driver.get(URL);
 		
 		String pageSource = driver.getPageSource();
 		
