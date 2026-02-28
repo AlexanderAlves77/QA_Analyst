@@ -5,15 +5,15 @@ import org.junit.jupiter.api.extension.ExtensionContext;
 import org.openqa.selenium.WebDriver;
 
 import com.rubeus.qa.base.BaseTest;
+import com.rubeus.qa.report.ExtentTestManager;
 import com.rubeus.qa.utils.TestUtils;
 
 
 /**
  * ScreenshotExtension
  *
- * JUnit 5 extension to capture screenshot on test failure.
- *
- * This is the professional and correct way to integrate screenshots.
+*
+ * Captures screenshot and attaches to ExtentReport on test failure.
  */
 public class ScreenshotExtension implements AfterTestExecutionCallback
 {
@@ -29,7 +29,10 @@ public class ScreenshotExtension implements AfterTestExecutionCallback
 			if (testInstance instanceof BaseTest) 
 			{
 				WebDriver driver = ((BaseTest) testInstance).getDriver();
-				TestUtils.takeScreenshot(driver);
+				String screenshotPath = TestUtils.takeScreenshot(driver);
+				
+				ExtentTestManager.fail(context.getExecutionException().get().getMessage());
+				ExtentTestManager.attachScreenshot(screenshotPath);				
 			}
 		}
 	}
