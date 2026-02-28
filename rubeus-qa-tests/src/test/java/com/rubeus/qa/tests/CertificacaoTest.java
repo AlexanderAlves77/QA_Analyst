@@ -74,6 +74,7 @@ public class CertificacaoTest extends BaseTest
 	/**
      * Test if certification content exists
      */
+	@Test
 	public void testCertificationContentExists() 
 	{
 		assertTrue(certificacaoPage.containsCertificationText(),

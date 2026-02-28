@@ -12,6 +12,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.rubeus.qa.config.ConfigManager;
+
 /**
  * BasePage
  *
@@ -31,6 +33,7 @@ public class BasePage
 {
 	protected WebDriver driver;
 	protected WebDriverWait wait;
+	protected ConfigManager config;
 
 	private static final int DEFAULT_TIMEOUT = 10;
 	private static final int RETRY_COUNT = 2;
@@ -44,6 +47,7 @@ public class BasePage
 	{
 		this.driver = driver; 
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(DEFAULT_TIMEOUT));
+		this.config = ConfigManager.getInstance();
 	}
 	
 	/**
@@ -180,11 +184,42 @@ public class BasePage
 		}
 		catch (InterruptedException ex) {}
 	}
+	
+	/**
+     * Navigate to URL
+     */
+    protected void navigateTo(String url)
+    {
+        driver.get(url);
+    }
+    
+    /**
+     * Find element
+     */
+    protected WebElement find(By locator)
+    {
+        return driver.findElement(locator);
+    }
+    
+    /**
+     * Check if element is displayed
+     */
+    protected boolean isDisplayed(By locator)
+    {
+        try
+        {
+            return find(locator).isDisplayed();
+        }
+        catch (Exception ex)
+        {
+            return false;
+        }
+    }
 		
 	 /**
      * Get current page title
      */
-	public String getPageTitle()
+	public String getTitle()
 	{
 		return driver.getTitle();
 	}
@@ -197,4 +232,11 @@ public class BasePage
 		return driver.getCurrentUrl();
 	}
 	
+	/**
+     * Get page source
+     */
+    protected String getPageSource()
+    {
+        return driver.getPageSource();
+    }
 }

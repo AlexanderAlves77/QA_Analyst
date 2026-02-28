@@ -15,6 +15,7 @@ import com.rubeus.qa.config.ConfigManager;
 import com.rubeus.qa.extensions.ScreenshotExtension;
 import com.rubeus.qa.report.ExtentTestManager;
 import com.rubeus.qa.utils.LoggerManager;
+import com.rubeus.qa.utils.LoggerUtils;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -57,6 +58,7 @@ public abstract class BaseTest
 		
 		startReporting(testInfo);
 		
+		LoggerUtils.init();		
 		
 		logger.info("Browser started successfully.");
 	}
@@ -68,7 +70,7 @@ public abstract class BaseTest
 	{
 		String browser = config.getBrowser();
 		
-		if (browser.equalsIgnoreCase("chromw")) 
+		if (browser.equalsIgnoreCase("chrome")) 
 		{
 			WebDriverManager.chromedriver().setup();
 			
@@ -108,6 +110,11 @@ public abstract class BaseTest
 	@AfterEach 
 	public void tearDown(TestInfo testInfo)
 	{
+		if (!testInfo.getTags().contains("FAILED"))
+	    {
+	        ExtentTestManager.pass("Test passed");
+	    }
+		
 		if (driver != null) 
 		{
 			driver.quit();

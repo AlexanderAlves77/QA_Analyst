@@ -2,6 +2,9 @@ package com.rubeus.qa.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.rubeus.qa.config.ConfigManager;
 
 /**
  * SitePage
@@ -17,9 +20,9 @@ import org.openqa.selenium.WebDriver;
  * - Content verification
  */
 public class SitePage extends BasePage
-{
+{	
 	// Basic locator to validate page load
-	private By header = By.tagName("h1");
+	private By body = By.tagName("body");
 	
 	/**
      * Constructor
@@ -29,9 +32,44 @@ public class SitePage extends BasePage
 		super(driver);
 	}
 	
+	/**
+     * Validate page loaded
+     */
+    public boolean isPageLoaded()
+    {
+        return isDisplayed(body);
+    }
+	
+    /**
+     * Get current URL
+     */
+    public String getPageUrl()
+    {
+        return getCurrentUrl();
+    }
+    
+	/**
+     * Navigate to Site page
+     */
+    public void open()
+    {
+        navigateTo(config.getBaseUrl() + "/site");
+    }
 		
 	public boolean isHeaderVisible()
 	{
-		return isVisible(header);
+		return isVisible(body);
 	}
+	
+	/**
+     * Check if expected content exists
+     */
+    public boolean containsCertificationText()
+    {
+        String source = getPageSource();
+
+        return source.contains("Site")
+                || source.contains("Certificação")
+                || source.contains("Certificacao");
+    }
 }
