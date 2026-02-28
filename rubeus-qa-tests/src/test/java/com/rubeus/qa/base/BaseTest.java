@@ -1,6 +1,5 @@
 package com.rubeus.qa.base;
 
-import java.time.Duration;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -9,14 +8,11 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.slf4j.Logger;
-
+import org.apache.logging.log4j.Logger;
 import com.rubeus.qa.extensions.ScreenshotExtension;
 import com.rubeus.qa.report.ExtentTestManager;
 import com.rubeus.qa.utils.LoggerManager;
-import com.rubeus.qa.utils.TestUtils;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 /**
  * BaseTest
@@ -32,7 +28,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 @ExtendWith(ScreenshotExtension.class)
 public abstract class BaseTest 
 {
-	protected Logger logger = (Logger) LoggerManager.getLogger(this.getClass());
+	protected Logger logger = LoggerManager.getLogger(this.getClass());
 	protected WebDriver driver;
 	
 	/**
