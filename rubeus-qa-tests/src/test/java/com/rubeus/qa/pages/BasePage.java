@@ -174,6 +174,14 @@ public class BasePage
 	}
 	
 	/**
+     * Navigate to Site page
+     */
+    public void open(String path)
+    {
+        navigateTo(config.getBaseUrl() + path);
+    }
+	
+	/**
      * Sleep utility
      */
 	protected void sleep(long millis) 

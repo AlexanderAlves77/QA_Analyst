@@ -53,7 +53,7 @@ public class SitePage extends BasePage
      */
     public void open()
     {
-        navigateTo(config.getBaseUrl() + "/site");
+        open("/site");
     }
 		
 	public boolean isHeaderVisible()
