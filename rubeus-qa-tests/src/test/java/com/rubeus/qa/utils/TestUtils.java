@@ -6,6 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.lang.StackWalker.StackFrame;
 
@@ -78,7 +79,7 @@ public class TestUtils
 			File screenshot = ((TakesScreenshot) driver)
 					.getScreenshotAs(OutputType.FILE);
 			
-			String timeStamp = LocalDate.now().format(TIMESTAMP_FORMAT);
+			String timeStamp = LocalDateTime.now().format(TIMESTAMP_FORMAT);
 			
 			String fileName = String.format(
 					"%s_%s_%s.png", 
@@ -89,9 +90,9 @@ public class TestUtils
 			Path destination = folderPath.resolve(fileName);			
 			Files.copy(screenshot.toPath(), destination);
 			
-			System.out.println("Screenshot saved: " + destination);
+			System.out.println("Screenshot saved: " + destination.toAbsolutePath());
 			
-			return destination.toString();
+			return destination.toAbsolutePath().toString();
 			
 		}
 		catch (IOException ex) 

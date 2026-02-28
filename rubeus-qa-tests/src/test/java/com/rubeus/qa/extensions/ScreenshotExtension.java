@@ -31,8 +31,11 @@ public class ScreenshotExtension implements AfterTestExecutionCallback
 				WebDriver driver = ((BaseTest) testInstance).getDriver();
 				String screenshotPath = TestUtils.takeScreenshot(driver);
 				
-				ExtentTestManager.fail(context.getExecutionException().get().getMessage());
-				ExtentTestManager.attachScreenshot(screenshotPath);				
+				if (screenshotPath != null) 
+				{
+					ExtentTestManager.fail(context.getExecutionException().get().getMessage());
+					ExtentTestManager.attachScreenshot(screenshotPath);
+				}								
 			}
 		}
 	}
