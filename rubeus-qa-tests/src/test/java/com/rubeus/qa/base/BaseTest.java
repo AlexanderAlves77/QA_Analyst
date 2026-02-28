@@ -4,8 +4,10 @@ import java.time.Duration;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.TestInfo;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import com.rubeus.qa.utils.TestUtils;
 
@@ -14,13 +16,15 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 /**
  * BaseTest
  *
- * This class is responsible for:
- * - WebDriver initialization
- * - Browser setup
- * - Timeout configuration
- * - Browser teardown
+ * Base class for all test classes.
  *
- * All test classes must extend this class.
+ * Responsibilities:
+ * - Setup WebDriver
+ * - Configure browser
+ * - Teardown WebDriver
+ * - Capture screenshot on test failure
+ *
+ * This follows industry best practices for QA automation.
  */
 public class BaseTest 
 {
@@ -32,15 +36,11 @@ public class BaseTest
 	@BeforeEach
 	public void setUp()
 	{
-		// Setup ChromeDriver automatically
-		WebDriverManager.chromedriver().setup();
+		ChromeOptions options = new ChromeOptions();
 		
-		// Initialize driver
-		driver = new ChromeDriver();
+		options.addArguments("--start-maximized");
 		
-		// Browser configuration
-		driver.manage().window().maximize();		
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver = new ChromeDriver(options);
 	}
 	
 	/**
@@ -49,11 +49,17 @@ public class BaseTest
 	@AfterEach 
 	public void tearDown()
 	{
-		if (driver != null) 
-			driver.quit();
+		if (driver == null) 
+			throw new IllegalStateException("Driver not initialized");
+		
+		driver.quit();
 	}
 	
-	protected WebDriver getDriver() 
+	/**
+     * Getter for WebDriver
+     * Required for extensions and reporting tools
+     */
+	public WebDriver getDriver() 
 	{
 		return driver;
 	}
