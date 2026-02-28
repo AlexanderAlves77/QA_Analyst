@@ -44,32 +44,44 @@ This automation framework follows enterprise-level design patterns and best prac
 
 ## Architecture Components
 
-```
-src/test/java/com/rubeus/qa/
+rubeus-qa/
+│
+├── src/
+│   ├── main/
+│   │   └── java/
+│   │       └── com/rubeus/qa/
+│   │           ├── base/
+│   │           │   └── BaseTest.java
+│   │           ├── config/
+│   │           │   └── ConfigManager.java
+│   │           ├── pages/
+│   │           │   ├── BasePage.java
+│   │           │   ├── SitePage.java
+│   │           │   └── CertificacaoPage.java
+│   │           ├── report/
+│   │           │   ├── ExtentManager.java
+│   │           │   ├── ExtentTestManager.java (suposto)
+│   │           │   └── ScreenshotManager.java
+│   │           └── utils/
+│   │               ├── LoggerManager.java
+│   │               ├── LoggerUtils.java
+│   │               └── TestUtils.java
+│   │
+│   └── test/
+│       ├── java/
+│       │   └── com/rubeus/qa/tests/
+│       │       ├── SiteTest.java
+│       │       └── CertificacaoTest.java
+│       │
+│       └── resources/
+│           ├── config.properties
+│           └── log4j2.xml
+│
+├── screenshots/        # Test evidence, organized by date/class/test
+├── logs/               # log files
+├── test-output/        # ExtentReports automatically generated
+└── pom.xml (ou build.gradle)
 
-base/
-   BaseTest.java
-   BasePage.java
-
-tests/
-   CertificacaoTest.java
-   SiteTest.java
-
-pages/
-   CertificacaoPage.java
-   SitePage.java
-
-utils/
-   TestUtils.java
-   LoggerManager.java
-
-report/
-   ExtentManager.java
-   ExtentTestManager.java
-
-extensions/
-   ScreenshotExtension.java
-```
 
 ---
 
