@@ -9,9 +9,11 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.slf4j.Logger;
 
 import com.rubeus.qa.extensions.ScreenshotExtension;
 import com.rubeus.qa.report.ExtentTestManager;
+import com.rubeus.qa.utils.LoggerManager;
 import com.rubeus.qa.utils.TestUtils;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -30,6 +32,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 @ExtendWith(ScreenshotExtension.class)
 public abstract class BaseTest 
 {
+	protected Logger logger = (Logger) LoggerManager.getLogger(this.getClass());
 	protected WebDriver driver;
 	
 	/**
@@ -45,7 +48,7 @@ public abstract class BaseTest
 		String testName = className + " - " + methodName;
 		
 		ExtentTestManager.startTest(testName);
-		ExtentTestManager.info("Starting test: " + testName);
+		logger.info("Starting test: " + testName);
 		
 		// Setup WebDriver
 		ChromeOptions options = new ChromeOptions();
@@ -78,7 +81,7 @@ public abstract class BaseTest
 			if (driver != null) 
 			{
 				driver.quit();
-				ExtentTestManager.info("Browser closed");					
+				logger.info("Browser closed");					
 			}
 			
 			ExtentTestManager.flush();
