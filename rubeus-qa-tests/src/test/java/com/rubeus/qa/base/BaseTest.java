@@ -1,6 +1,8 @@
 package com.rubeus.qa.base;
 
 
+import java.time.Duration;
+import java.lang.reflect.Method;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestInfo;
@@ -9,27 +11,35 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.apache.logging.log4j.Logger;
+import com.rubeus.qa.config.ConfigManager;
 import com.rubeus.qa.extensions.ScreenshotExtension;
 import com.rubeus.qa.report.ExtentTestManager;
 import com.rubeus.qa.utils.LoggerManager;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 /**
  * BaseTest
  *
- * Professional base class for all automation tests.
+ * Enterprise base test class.
  *
  * Responsibilities:
- * - Initialize WebDriver
- * - Start ExtentReports test
- * - Handle teardown
- * - Flush report
+ *
+ * - WebDriver setup and teardown
+ * - ConfigManager integration
+ * - ExtentReports integration
+ * - Logging integration
+ * - Screenshot on failure
+ *
+ * All test classes must extend this class.
  */
 @ExtendWith(ScreenshotExtension.class)
 public abstract class BaseTest 
 {
 	protected Logger logger = LoggerManager.getLogger(this.getClass());
 	protected WebDriver driver;
+	protected ConfigManager config;
 	
 	/**
      * Setup method executed before each test
@@ -37,23 +47,59 @@ public abstract class BaseTest
 	@BeforeEach
 	public void setUp(TestInfo testInfo)
 	{
-		// Start report test
-		String className = testInfo.getTestClass().get().getSimpleName();
-		String methodName = testInfo.getTestMethod().get().getName();
+		config = ConfigManager.getInstance();
+		
+		initializerDriver();
+		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(config.getTimeout()));
+		
+		driver.manage().window().maximize();
+		
+		startReporting(testInfo);
+		
+		
+		logger.info("Browser started successfully.");
+	}
+	
+	/**
+     * Initialize WebDriver based on config
+     */
+	private void initializerDriver() 
+	{
+		String browser = config.getBrowser();
+		
+		if (browser.equalsIgnoreCase("chromw")) 
+		{
+			WebDriverManager.chromedriver().setup();
+			
+			ChromeOptions options = new ChromeOptions();
+			
+			if (config.isHeadless()) 
+			{
+				options.addArguments("--headless=new");
+				options.addArguments("--window-size=1920,1080");
+			}
+			driver = new ChromeDriver(options);
+		}
+		else 
+		{
+			throw new RuntimeException("Browser not supported" + browser);
+		}
+	}
+	
+	/**
+     * Initialize ExtentReports test
+     */
+	private void startReporting(TestInfo testInfo) 
+	{
+		String className = testInfo.getTestClass().map(Class::getSimpleName).orElse("UnknownClass");
+		String methodName = testInfo.getTestMethod().map(Method::getName).orElse("UnknownTest");
 		
 		String testName = className + " - " + methodName;
 		
-		ExtentTestManager.startTest(testName);
+		ExtentTestManager.createTest(testName);
+		
 		logger.info("Starting test: " + testName);
-		
-		// Setup WebDriver
-		ChromeOptions options = new ChromeOptions();
-		
-		options.addArguments("--start-maximized");
-		
-		driver = new ChromeDriver(options);
-		
-		ExtentTestManager.info("Browser started successfully.");
 	}
 	
 	/**
@@ -62,26 +108,13 @@ public abstract class BaseTest
 	@AfterEach 
 	public void tearDown(TestInfo testInfo)
 	{
-		try 
+		if (driver != null) 
 		{
-			ExtentTestManager.pass("Test finished successfully: " + 
-					testInfo.getTestMethod().get().getName()
-			);
+			driver.quit();
+			logger.info("Browser closed");					
 		}
-		catch (Exception ex) 
-		{
-			ExtentTestManager.fail("Test failed: " + ex.getMessage());
-		}
-		finally
-		{
-			if (driver != null) 
-			{
-				driver.quit();
-				logger.info("Browser closed");					
-			}
-			
-			ExtentTestManager.flush();
-		}		
+		
+		ExtentTestManager.flush();		
 	}
 	
 	/**
