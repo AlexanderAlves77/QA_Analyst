@@ -74,4 +74,19 @@ public class ExtentTestManager
 	{
 		extent.flush();
 	}
+	
+	public static void attachScreenshot(String screenshotPath) 
+	{
+		try
+		{
+			if (screenshotPath != null) 
+			{
+				getTest().addScreenCaptureFromPath(screenshotPath);
+			}
+		}
+		catch (Exception ex) 
+		{
+			System.out.println("Failed to attach screenshot: " + ex.getMessage());
+		}
+	}
 }
