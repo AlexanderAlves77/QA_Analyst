@@ -29,7 +29,7 @@ public class ExtentManager
 	
 	private static void createInstance()
 	{
-		String timeStamp = LocalDate.now().format(TIMESTAMP_FORMAT);
+		String timeStamp = LocalDateTime.now().format(TIMESTAMP_FORMAT);
 		
 		String reportPath = Paths.get("test-output",
 				"ExtentReport_" + timeStamp + ".html")
