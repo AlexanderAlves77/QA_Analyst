@@ -6,115 +6,213 @@ This repository contains automated and manual quality assurance tests developed 
 
 # Objective
 
-The purpose of this project is to evaluate the functionality, usability, and overall quality of the following web applications:
+The purpose of this project is to evaluate the functionality, usability, stability, and overall quality of the following web applications:
 
-- https://qualidade.apprbs.com.br/certificacao
-- https://qualidade.apprbs.com.br/site
+* https://qualidade.apprbs.com.br/certificacao
+* https://qualidade.apprbs.com.br/site
 
-This project demonstrates skills in:
+This project demonstrates professional skills in:
 
-- Software Quality Assurance
-- Automated UI Testing
-- Test Automation using Java and Selenium
-- Bug identification and reporting
-- Test organization and best practices
+* Software Quality Assurance
+* Automated UI Testing
+* Test Automation Framework Design
+* Bug identification and reporting
+* Evidence generation and reporting
+* Enterprise-level test architecture
 
 ---
 
 # Technologies Used
 
-| Technology | Purpose |
-|----------|---------|
-| Java 17 | Programming language |
-| Maven | Dependency management and build tool |
-| Selenium WebDriver | Browser automation |
-| JUnit 5 | Test framework |
-| WebDriverManager | Automatic driver management |
-| Eclipse IDE | Development environment |
-| Git & GitHub | Version control |
+| Technology         | Purpose                         |
+| ------------------ | ------------------------------- |
+| Java 17            | Programming language            |
+| Maven              | Build and dependency management |
+| Selenium WebDriver | Browser automation              |
+| JUnit 5            | Test execution framework        |
+| WebDriverManager   | Automatic driver management     |
+| ExtentReports      | Professional HTML reporting     |
+| Log4j2             | Execution logging               |
+| Eclipse IDE        | Development environment         |
+| Git & GitHub       | Version control                 |
 
 ---
 
-# Project Structure
+# Framework Architecture
 
-rubeus-qa-tests/
-│
-├── src/
-│ └── test/
-│ └── java/
-│ └── com/
-│ └── rubeus/
-│ └── qa/
-│ ├── base/
-│ ├── tests/
-│ └── utils/
-│
-├── pom.xml
-├── README.md
-└── .gitignore
+This automation framework follows enterprise-level design patterns and best practices.
 
+## Architecture Components
+
+```
+src/test/java/com/rubeus/qa/
+
+base/
+   BaseTest.java
+   BasePage.java
+
+tests/
+   CertificacaoTest.java
+   SiteTest.java
+
+pages/
+   CertificacaoPage.java
+   SitePage.java
+
+utils/
+   TestUtils.java
+   LoggerManager.java
+
+report/
+   ExtentManager.java
+   ExtentTestManager.java
+
+extensions/
+   ScreenshotExtension.java
+```
 
 ---
 
-# Test Coverage
+# Features Implemented
 
-This project includes automated tests for:
+## Automated UI Testing
 
-- Page loading validation
-- Navigation testing
-- Button interaction testing
-- Form validation testing
-- UI element verification
-- Functional behavior validation
+* Page load validation
+* Navigation testing
+* UI element validation
+* Functional behavior testing
+* Form interaction testing
+
+## Automatic Screenshot Capture
+
+Screenshots are automatically captured when a test fails.
+
+```
+screenshots/
+   2026-02-28/
+      SiteTest_accessHomePage_2026-02-28_16-32-10.png
+```
 
 ---
 
-# Automation Strategy
+## Professional HTML Reporting (ExtentReports)
 
-The test automation framework follows best practices including:
+After execution, a professional report is generated:
 
-- Base test class for WebDriver setup and teardown
-- Reusable components
-- Clean and maintainable code structure
-- Automated driver management
-- Isolated and independent test execution
+```
+test-output/
+   ExtentReport_YYYY-MM-DD_HH-mm-ss.html
+```
+
+The report includes:
+
+* Test execution status (PASS / FAIL)
+* Error details
+* Execution time
+* Screenshot evidence
+* Logs
+
+---
+
+## Execution Logging (Log4j2)
+
+All execution events are logged automatically:
+
+```
+logs/
+   execution.log
+```
+
+Example:
+
+```
+2026-02-28 16:32:10 [INFO] Starting test: SiteTest - accessHomePage
+2026-02-28 16:32:15 [INFO] Browser started
+2026-02-28 16:32:20 [INFO] Browser closed
+```
+
+---
+
+# Test Automation Strategy
+
+This framework follows industry best practices:
+
+* Page Object Model (POM)
+* Base test class abstraction
+* Automatic screenshot capture on failure
+* Professional HTML reporting
+* Structured logging
+* Reusable components
+* Clean architecture
+* Maintainable and scalable design
 
 ---
 
 # Requirements
 
-Before running the tests, ensure the following are installed:
+Before running the tests, install:
 
-- Java 17 or higher
-- Maven
-- Google Chrome browser
-- Eclipse IDE (recommended)
+* Java 17 or higher
+* Maven
+* Google Chrome
+* Eclipse IDE (recommended)
+* Git
 
 ---
 
 # How to Run Tests
 
-## Option 1 — Using Eclipse
+## Using Eclipse
 
-Right click on project  
-Run As → Maven test  
-
-or  
-
-Right click on test class  
-Run As → JUnit Test  
+Right click project
+Run As → Maven test
+or
+Right click test class
+Run As → JUnit Test
 
 ---
 
-## Option 2 — Using Maven command line
+## Using Maven command line
 
-mvn clean test 
+```
+mvn clean test
+```
 
 ---
 
-## Author
+# Test Evidence Generated
+
+After execution, the following artifacts are automatically generated:
+
+```
+screenshots/
+test-output/
+logs/
+```
+
+These provide complete traceability and debugging capability.
+
+---
+
+# Quality Engineering Practices Demonstrated
+
+This project demonstrates professional QA engineering capabilities including:
+
+* Test automation framework development
+* Automated evidence generation
+* Failure analysis support
+* Professional reporting
+* Logging and traceability
+* Clean code practices
+* Scalable architecture design
+
+---
+
+# Author
 
 Alexander
 Computer Science Student
-Game Development
-QA Automation Engineer (in progress)
+QA Automation Engineer
+Game Developer
+
+GitHub: https://github.com/alexanderalves77
