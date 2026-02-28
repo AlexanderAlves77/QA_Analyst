@@ -45,26 +45,27 @@ public class TestUtils
      *
      * @param driver WebDriver instance
      */
-	public static void takeScreenshot(WebDriver driver)
+	public static String takeScreenshot(WebDriver driver)
 	{
 		try
 		{
 			String className  = getCallingClassName();
 			String methodName = getCallingMethodName();
 			
-			takeScreenshot(driver, className, methodName);
+			return takeScreenshot(driver, className, methodName);
 			
 		}
 		catch (Exception ex) 
 		{
 			System.out.println("Failed to capture screenshot: " + ex.getMessage());
+			return null;
 		}
 	}
 	
 	/**
      * Capture screenshot with explicit class and method name
      */
-	public static void takeScreenshot(WebDriver driver, String className, String methodName)
+	public static String takeScreenshot(WebDriver driver, String className, String methodName)
 	{
 		try
 		{
@@ -90,10 +91,13 @@ public class TestUtils
 			
 			System.out.println("Screenshot saved: " + destination);
 			
+			return destination.toString();
+			
 		}
 		catch (IOException ex) 
 		{
 			System.out.println("Failed to capture screenshot: " + ex.getMessage());
+			return null;
 		}
 	}
 	
