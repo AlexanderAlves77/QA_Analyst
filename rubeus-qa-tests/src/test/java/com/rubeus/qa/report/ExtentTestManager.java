@@ -21,7 +21,7 @@ public class ExtentTestManager
      *
      * @param testName Test name
      */
-	public static void startTest(String testName) 
+	public static void createTest(String testName) 
 	{
 		ExtentTest test = extent.createTest(testName);
 		extentTest.set(test);
