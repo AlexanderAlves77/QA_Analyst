@@ -3,6 +3,8 @@ package com.rubeus.qa.base;
 
 import java.time.Duration;
 import java.lang.reflect.Method;
+
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestInfo;
@@ -14,8 +16,10 @@ import org.apache.logging.log4j.Logger;
 import com.rubeus.qa.config.ConfigManager;
 import com.rubeus.qa.extensions.ScreenshotExtension;
 import com.rubeus.qa.report.ExtentTestManager;
+import com.rubeus.qa.report.QAReportGenerator;
 import com.rubeus.qa.utils.LoggerManager;
 import com.rubeus.qa.utils.LoggerUtils;
+import com.rubeus.qa.utils.TestUtils;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -39,6 +43,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public abstract class BaseTest 
 {
 	protected Logger logger = LoggerManager.getLogger(this.getClass());
+	protected static QAReportGenerator qaReport = new QAReportGenerator();
 	protected WebDriver driver;
 	protected ConfigManager config;
 	
@@ -131,5 +136,23 @@ public abstract class BaseTest
 	public WebDriver getDriver() 
 	{
 		return driver;
+	}
+	
+	@AfterAll
+	public static void generateFinalReport() throws Exception
+	{
+		qaReport.generatePDF("reports/QA_Report.pdf");
+		qaReport.generateExcel("reports/QA_Report.xlsx");
+	}
+	
+	// Exemplo: registrar um item após cada teste
+	protected void reportTestItem(String page, String item, String type, String classification, 
+			String priority, String description)
+	{
+		String screenshot = TestUtils.takeScreenshot(driver);
+		
+		qaReport.addItem(new QAReportGenerator.QAItem(
+				page, item, type, classification, priority, description, screenshot)
+		);
 	}
 }
