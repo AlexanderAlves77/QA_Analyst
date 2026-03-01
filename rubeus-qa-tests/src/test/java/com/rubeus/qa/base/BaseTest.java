@@ -139,10 +139,18 @@ public abstract class BaseTest
 	}
 	
 	@AfterAll
-	public static void generateFinalReport() throws Exception
+	public static void generateFinalReport() 
 	{
-		qaReport.generatePDF("reports/QA_Report.pdf");
-		qaReport.generateExcel("reports/QA_Report.xlsx");
+		try
+		{
+			qaReport.generatePDF("reports/QA_Report.pdf");
+			qaReport.generateExcel("reports/QA_Report.xlsx");
+		}
+		catch (Exception ex)
+	    {
+	        System.err.println("Failed to generate QA reports: " + ex.getMessage());
+	        ex.printStackTrace();
+	    }
 	}
 	
 	// Exemplo: registrar um item após cada teste
@@ -154,5 +162,7 @@ public abstract class BaseTest
 		qaReport.addItem(new QAReportGenerator.QAItem(
 				page, item, type, classification, priority, description, screenshot)
 		);
+		
+		logger.info("QA Item registered: " + item);
 	}
 }
