@@ -58,6 +58,27 @@
 		    <artifactId>log4j-core</artifactId>
 		    <version>${log4j.version}</version>
 		</dependency>
+		
+		<!-- Apache POI - Excel -->
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi</artifactId>
+		    <version>5.2.5</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi-ooxml</artifactId>
+		    <version>5.2.5</version>
+		</dependency>
+		
+		<!-- iText 7 - PDF -->
+		<dependency>
+		    <groupId>com.itextpdf</groupId>
+		    <artifactId>itext7-core</artifactId>
+		    <version>8.0.4</version>
+		    <type>pom</type>
+		</dependency>
 
     </dependencies>
 
