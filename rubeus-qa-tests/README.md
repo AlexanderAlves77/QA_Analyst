@@ -17,7 +17,8 @@ This project demonstrates professional skills in:
 * Automated UI Testing
 * Test Automation Framework Design
 * Bug identification and reporting
-* Evidence generation and reporting
+* Automated evidence generation
+* Professional QA report generation (PDF and Excel)
 * Enterprise-level test architecture
 
 ---
@@ -26,7 +27,7 @@ This project demonstrates professional skills in:
 
 | Technology         | Purpose                         |
 | ------------------ | ------------------------------- |
-| Java 17            | Programming language            |
+| Java 21            | Programming language            |
 | Maven              | Build and dependency management |
 | Selenium WebDriver | Browser automation              |
 | JUnit 5            | Test execution framework        |
@@ -34,7 +35,10 @@ This project demonstrates professional skills in:
 | ExtentReports      | Professional HTML reporting     |
 | Log4j2             | Execution logging               |
 | Eclipse IDE        | Development environment         |
+| Apache POI         | Excel report generation         |
+| iText PDF          | PDF report generation           |
 | Git & GitHub       | Version control                 |
+
 
 ---
 
@@ -44,43 +48,41 @@ This automation framework follows enterprise-level design patterns and best prac
 
 ## Architecture Components
 
-rubeus-qa/
+rubeus-qa-tests/
 │
 ├── src/
-│   ├── main/
-│   │   └── java/
-│   │       └── com/rubeus/qa/
-│   │           ├── base/
-│   │           │   └── BaseTest.java
-│   │           ├── config/
-│   │           │   └── ConfigManager.java
-│   │           ├── pages/
-│   │           │   ├── BasePage.java
-│   │           │   ├── SitePage.java
-│   │           │   └── CertificacaoPage.java
-│   │           ├── report/
-│   │           │   ├── ExtentManager.java
-│   │           │   ├── ExtentTestManager.java (suposto)
-│   │           │   └── ScreenshotManager.java
-│   │           └── utils/
-│   │               ├── LoggerManager.java
-│   │               ├── LoggerUtils.java
-│   │               └── TestUtils.java
+│   ├── main/java/com/rubeus/qa/
 │   │
-│   └── test/
-│       ├── java/
-│       │   └── com/rubeus/qa/tests/
-│       │       ├── SiteTest.java
-│       │       └── CertificacaoTest.java
-│       │
-│       └── resources/
-│           ├── config.properties
-│           └── log4j2.xml
+│   │   ├── base/
+│   │   │   └── BaseTest.java
+│   │   │
+│   │   ├── config/
+│   │   │   └── ConfigManager.java
+│   │   │
+│   │   ├── pages/
+│   │   │   ├── BasePage.java
+│   │   │   ├── SitePage.java
+│   │   │   └── CertificacaoPage.java
+│   │   │
+│   │   ├── report/
+│   │   │   ├── ExtentManager.java
+│   │   │   ├── ExtentTestManager.java
+│   │   │   └── QAReportGenerator.java
+│   │   │
+│   │   └── utils/
+│   │       ├── LoggerManager.java
+│   │       ├── LoggerUtils.java
+│   │       └── TestUtils.java
+│   │
+│   └── test/java/com/rubeus/qa/tests/
+│       ├── SiteTest.java
+│       └── CertificacaoTest.java
 │
-├── screenshots/        # Test evidence, organized by date/class/test
-├── logs/               # log files
-├── test-output/        # ExtentReports automatically generated
-└── pom.xml (ou build.gradle)
+├── screenshots/
+├── reports/
+├── logs/
+├── test-output/
+└── pom.xml
 
 
 ---
@@ -89,11 +91,12 @@ rubeus-qa/
 
 ## Automated UI Testing
 
-* Page load validation
-* Navigation testing
-* UI element validation
-* Functional behavior testing
-* Form interaction testing
+* Page accessibility
+* Page load success
+* URL correctness
+* Title validation
+* Content validation
+* Functional stability
 
 ## Automatic Screenshot Capture
 
@@ -101,9 +104,32 @@ Screenshots are automatically captured when a test fails.
 
 ```
 screenshots/
-   2026-02-28/
-      SiteTest_accessHomePage_2026-02-28_16-32-10.png
+   2026-03-02/
+      SiteTest_validateSitePage_success_2026-03-02_14-32-10.png
 ```
+
+---
+
+## Automatic QA Report Generation (PDF and Excel)
+
+After test execution, structured QA reports are automatically generated:
+```
+reports/
+   QA_Report.pdf
+   QA_Report.xlsx
+```
+
+These reports include:
+- Page name
+- Issue or validation item
+- Type (Correction, Improvement, New Feature)
+- Classification (Utility, Usability, Desirability)
+- Priority (High, Medium, Low)
+- Detailed description
+- Screenshot evidence
+
+This format follows the exact reporting requirements specified by Rubeus.
+   
 
 ---
 
@@ -118,17 +144,17 @@ test-output/
 
 The report includes:
 
-* Test execution status (PASS / FAIL)
+* Test execution status
+* PASS / FAIL results
 * Error details
-* Execution time
-* Screenshot evidence
-* Logs
+* Screenshots
+* Execution timeline
 
 ---
 
 ## Execution Logging (Log4j2)
 
-All execution events are logged automatically:
+All framework activities are logged:
 
 ```
 logs/
@@ -138,25 +164,37 @@ logs/
 Example:
 
 ```
-2026-02-28 16:32:10 [INFO] Starting test: SiteTest - accessHomePage
-2026-02-28 16:32:15 [INFO] Browser started
-2026-02-28 16:32:20 [INFO] Browser closed
+2026-03-02 14:32:10 [INFO] Starting test: SiteTest - validateSitePage
+2026-03-02 14:32:15 [INFO] Browser started successfully
+2026-03-02 14:32:20 [INFO] Browser closed
 ```
 
 ---
 
 # Test Automation Strategy
 
-This framework follows industry best practices:
+This framework follows industry-standard best practices:
+- Page Object Model (POM)
+- Base Test abstraction
+- Automatic screenshot capture
+- Automatic PDF and Excel report generation
+- Professional HTML reporting
+- Structured logging
+- Clean architecture
+- Scalable and maintainable design
+- Enterprise-grade automation structure
 
-* Page Object Model (POM)
-* Base test class abstraction
-* Automatic screenshot capture on failure
-* Professional HTML reporting
-* Structured logging
-* Reusable components
-* Clean architecture
-* Maintainable and scalable design
+---
+
+Evidence Generated
+
+After execution, the following artifacts are available:
+```
+screenshots/
+reports/
+logs/
+test-output/
+```
 
 ---
 
@@ -164,7 +202,7 @@ This framework follows industry best practices:
 
 Before running the tests, install:
 
-* Java 17 or higher
+* Java 21 or higher
 * Maven
 * Google Chrome
 * Eclipse IDE (recommended)
@@ -192,17 +230,16 @@ mvn clean test
 
 ---
 
-# Test Evidence Generated
-
-After execution, the following artifacts are automatically generated:
-
+# Expected Output After Execution
 ```
 screenshots/
-test-output/
+reports/
+   QA_Report.pdf
+   QA_Report.xlsx
 logs/
+test-output/
+   ExtentReport.html
 ```
-
-These provide complete traceability and debugging capability.
 
 ---
 
@@ -210,21 +247,30 @@ These provide complete traceability and debugging capability.
 
 This project demonstrates professional QA engineering capabilities including:
 
-* Test automation framework development
+* Automated UI testing
 * Automated evidence generation
-* Failure analysis support
-* Professional reporting
+* Structured bug reporting
+* Professional PDF and Excel report generation
+* Automation framework architecture
+* Failure diagnostics support
 * Logging and traceability
-* Clean code practices
-* Scalable architecture design
+* Clean code and maintainable design
 
 ---
 
 # Author
-
+```
 Alexander
 Computer Science Student
 QA Automation Engineer
+Java Developer
 Game Developer
 
 GitHub: https://github.com/alexanderalves77
+```
+
+---
+
+# Final Notes
+
+This framework was designed to simulate a real-world enterprise QA automation environment and fully complies with the reporting and validation requirements defined in the Rubeus Quality Analyst selection process.
