@@ -20,7 +20,7 @@ import com.rubeus.qa.report.QAReportGenerator;
 import com.rubeus.qa.utils.LoggerManager;
 import com.rubeus.qa.utils.LoggerUtils;
 import com.rubeus.qa.utils.TestUtils;
-
+import com.rubeus.qa.listeners.QAListener;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 
@@ -39,7 +39,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  *
  * All test classes must extend this class.
  */
-@ExtendWith(ScreenshotExtension.class)
+@ExtendWith({ QAListener.class, ScreenshotExtension.class })
 public abstract class BaseTest 
 {
 	protected Logger logger = LoggerManager.getLogger(this.getClass());
@@ -115,6 +115,8 @@ public abstract class BaseTest
 	@AfterEach 
 	public void tearDown(TestInfo testInfo)
 	{
+		TestUtils.takeScreenshot(driver); 
+		
 		if (!testInfo.getTags().contains("FAILED"))
 	    {
 	        ExtentTestManager.pass("Test passed");
