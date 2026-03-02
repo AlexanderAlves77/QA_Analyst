@@ -3,9 +3,6 @@ package com.rubeus.qa.listeners;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.TestWatcher;
 
-import com.rubeus.qa.base.BaseTest;
-import com.rubeus.qa.utils.TestUtils;
-
 
 public class QAListener implements TestWatcher
 {
