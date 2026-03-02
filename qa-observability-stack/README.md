@@ -57,28 +57,34 @@ docker compose version
 ## Installation
 
 Clone the repository:
+```bash
 git clone https://github.com/AlexanderAlves77/QA_Analyst/tree/main/qa-observability-stack
+```
 
 Navigate to the project folder:
+```bash
 cd qa-observability-stack
+```
 
 Start the observability stack:
+```bash
 docker compose up -d
+```
 
-Services and URLs:
+Services and URLs: <br/>
 Service	         URL	                      Description 
-Prometheus	     http://localhost:9090        Metrics collection
-Grafana	         http://localhost:3000    	  Metrics visualization
-InfluxDB	     http://localhost:8086        Metrics storage
+Prometheus	     http://localhost:9090        Metrics collection      <br/>
+Grafana	         http://localhost:3000    	  Metrics visualization   <br/>
+InfluxDB	     http://localhost:8086        Metrics storage         <br/>
 
 
 ---
 
 # Author
 
-Alexander Alves
-Computer Science Student
-QA Automation Engineer
-Game Developer
+Alexander Alves            <br/>
+Computer Science Student   <br/>
+QA Automation Engineer     <br/>
+Game Developer             <br/>
 
 GitHub: https://github.com/alexanderalves77
