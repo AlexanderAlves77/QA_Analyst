@@ -59,6 +59,15 @@ public class QAReportGenerator
 		items.add(item);
 	}
 	
+	public void addTestResult(String page, String item, String type, String classification, 
+			String priority, String description, String screenshotPath)
+	{
+		QAItem qaItem = new QAItem(page, item, type, classification, priority, 
+				description, screenshotPath);
+		
+		addItem(qaItem);
+	}
+	
 	// ================= PDF =================
 	public void generatePDF(String outputPath) throws Exception
 	{

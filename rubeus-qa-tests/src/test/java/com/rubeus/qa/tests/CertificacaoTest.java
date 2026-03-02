@@ -2,12 +2,15 @@ package com.rubeus.qa.tests;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
 
 import com.rubeus.qa.base.BaseTest;
 import com.rubeus.qa.pages.CertificacaoPage;
+import com.rubeus.qa.utils.TestUtils;
 
 /**
  * CertificacaoTest
@@ -79,5 +82,54 @@ public class CertificacaoTest extends BaseTest
 	{
 		assertTrue(certificacaoPage.containsCertificationText(),
 				"Certification content was not found on the page.");
+	}
+	
+	@Test 
+	public void validateCertificationPage() 
+	{
+		String screenshotPath = null;
+		
+		try 
+		{
+			assertTrue(certificacaoPage.isPageLoaded());
+			
+			assertEquals("https://qualidade.apprbs.com.br/certificacao", 
+					certificacaoPage.getPageUrl());
+			
+			assertNotNull(certificacaoPage.getTitle());			
+			assertFalse(certificacaoPage.getTitle().isEmpty());
+			
+			assertTrue(certificacaoPage.containsCertificationText());
+			
+			screenshotPath = TestUtils.takeScreenshot(driver, "certificacao_success",
+					"validateCertificacaoPage_success");
+			
+			qaReport.addTestResult(
+					"Certificação",
+                    "Page loaded successfully",
+                    "Melhoria",
+                    "Utilidade",
+                    "Baixa",
+                    "Certification page loaded successfully with correct URL, title and content.",
+				    screenshotPath
+			);		
+		}
+		catch (AssertionError | Exception ex)
+		{
+			screenshotPath = TestUtils.takeScreenshot(driver, "CertificacaoTest",
+			        "validateCertificacaoPage_error");
+			
+			qaReport.addTestResult(
+					"Certificação",
+                    "Page validation failed",
+                    "Correção",
+                    "Utilidade",
+                    "Alta",
+                    "Certification page validation failed: " + ex.getMessage(),
+				    screenshotPath
+			);
+			
+			throw ex;
+		}
 	}
 }

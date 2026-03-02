@@ -72,7 +72,7 @@ docker compose up -d
 ```
 
 Services and URLs: <br/>
-Service	         URL	                      Description 
+Service	         URL	                      Description             <br/>
 Prometheus	     http://localhost:9090        Metrics collection      <br/>
 Grafana	         http://localhost:3000    	  Metrics visualization   <br/>
 InfluxDB	     http://localhost:8086        Metrics storage         <br/>

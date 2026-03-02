@@ -1,13 +1,12 @@
 package com.rubeus.qa.tests;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import com.rubeus.qa.base.BaseTest;
 import com.rubeus.qa.pages.SitePage;
+import com.rubeus.qa.utils.TestUtils;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * SiteTest
@@ -79,5 +78,53 @@ public class SiteTest extends BaseTest
 	{
 		assertTrue(sitePage.containsCertificationText(),
 				"Expected content was not found on Site page.");
+	}
+	
+	@Test 
+	public void validateSitePage() 
+	{
+		String screenshotPath = null;
+		
+		try 
+		{
+			assertTrue(sitePage.isPageLoaded());
+			
+			assertEquals("https://qualidade.apprbs.com.br/site", sitePage.getPageUrl());
+			
+			assertNotNull(sitePage.getTitle());			
+			assertFalse(sitePage.getTitle().isEmpty());
+			
+			assertTrue(sitePage.containsCertificationText());
+			
+			screenshotPath = TestUtils.takeScreenshot(driver, "site_success",
+					"validateSitePage_success");
+			
+			qaReport.addTestResult(
+					"Site",
+                    "Page loaded successfully",
+                    "Melhoria",
+                    "Utilidade",
+                    "Baixa",
+                    "Site page loaded successfully with correct URL, title and content.",
+				    screenshotPath
+			);		
+		}
+		catch (AssertionError | Exception ex)
+		{
+			screenshotPath = TestUtils.takeScreenshot(driver, "SiteTest",
+			        "validateSitePage_error");
+			
+			qaReport.addTestResult(
+					"Site",
+                    "Page validation failed",
+                    "Correção",
+                    "Utilidade",
+                    "Alta",
+                    "Site page validation failed: " + ex.getMessage(),
+				    screenshotPath
+			);
+			
+			throw ex;
+		}
 	}
 }
