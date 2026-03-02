@@ -11,19 +11,13 @@ public class QAListener implements TestWatcher
 {
 	@Override 
 	public void testSuccessful(ExtensionContext context) 
-	{
-		BaseTest testInstance = (BaseTest) context.getRequiredTestInstance();
-		TestUtils.takeScreenshot(testInstance.getDriver());
-		
+	{	
 		System.out.println("Test passed: " + context.getDisplayName());
 	}
 	
 	@Override 
 	public void testFailed(ExtensionContext context, Throwable cause) 
 	{
-		BaseTest testInstance = (BaseTest) context.getRequiredTestInstance();
-		TestUtils.takeScreenshot(testInstance.getDriver());
-		
 		System.out.println("Test failed: " + context.getDisplayName());
 	}
 }

@@ -115,8 +115,11 @@ public abstract class BaseTest
 	@AfterEach 
 	public void tearDown(TestInfo testInfo)
 	{
-		TestUtils.takeScreenshot(driver); 
-		
+		if (driver != null) 
+		{
+			TestUtils.takeScreenshot(driver); 
+		}
+				
 		if (!testInfo.getTags().contains("FAILED"))
 	    {
 	        ExtentTestManager.pass("Test passed");

@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -13,6 +14,8 @@ import java.lang.StackWalker.StackFrame;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * TestUtils
@@ -41,6 +44,18 @@ public class TestUtils
 	private static final DateTimeFormatter TIMESTAMP_FORMAT = 
 			DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss");
 	
+	private static void waitForPageLoad(WebDriver driver)
+	{
+		new WebDriverWait(driver, Duration.ofSeconds(10)).until(
+			webDriver -> ((JavascriptExecutor) webDriver)
+			.executeScript("return document.readyState")
+			.equals("complete")
+		);
+		
+		try { Thread.sleep(500); } catch (InterruptedException ignored) {}
+	}
+	
+	
 	/**
      * Capture screenshot with automatic test name detection
      *
@@ -50,6 +65,8 @@ public class TestUtils
 	{
 		try
 		{
+			waitForPageLoad(driver);
+			
 			String className  = getCallingClassName();
 			String methodName = getCallingMethodName();
 			
