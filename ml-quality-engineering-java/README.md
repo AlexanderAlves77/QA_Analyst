@@ -1,12 +1,29 @@
 # 📊 ML Quality Engineering - Data & UI Integrity
 
-This project is a core component of my **SDET / Quality Engineering** portfolio, focusing on quality assurance for Machine Learning-driven systems. The practical scenario involves validating an automated Credit Card Fraud Detection engine.
+This project is a Quality Engineering framework focused on validating data integrity, consistency, and reliability in Machine Learning systems.
+It ensures that data pipelines, transformations, and outputs maintain high quality standards, supporting reliable decision-making and system stability.
 
-## 🎯 Project Goals
-Unlike conventional automation, this framework validates the data lifecycle:
-1.  **Dataset Integrity:** Ensures the CSV source (test data) is healthy and properly formatted.
-2.  **Statistical Consistency:** Verifies class distribution balance (Fraud vs. Legitimate transactions).
-3.  **UI/Data Accuracy:** Ensures the Dashboard correctly reflects the processed ML model results using Selenium.
+
+## 🎯 Purpose
+Machine Learning systems rely heavily on data quality. This framework was designed to:
+
+- Validate input and output datasets
+- Detect inconsistencies, anomalies, and missing values
+- Ensure data integrity across processing stages
+- Support automated validation for ML pipelines
+
+---
+
+## 🧱 Architecture
+
+The project follows a modular and scalable architecture:
+```
+src/
+├── data/ # Input datasets (CSV, Excel)
+├── validators/ # Data validation logic
+├── utils/ # Helper classes and utilities
+├── tests/ # Test execution and validation scenarios
+```
 
 ---
 
@@ -17,6 +34,49 @@ Unlike conventional automation, this framework validates the data lifecycle:
 * **Assertions:** AssertJ (Fluent Assertions).
 * **Observability & Reporting:** Allure Report.
 * **Build Tool:** Maven.
+
+---
+
+## 🧪 Testing Strategy
+
+The framework validates data using:
+
+- ✅ Consistency checks (input vs output)
+- ✅ Missing values detection
+- ✅ Outlier identification
+- ✅ Data integrity validation
+- ✅ Business rule validation
+
+---
+
+## 🚀 How to Run
+
+1. Clone the repository:
+```
+git clone https://github.com/AlexanderAlves77/QA_Analyst.git
+cd ml-quality-engineering-java
+mvn clean install
+mvn test
+
+```
+
+---
+
+## 📊 Key Features
+- Data validation automation for ML systems
+- Multi-layer validation approach
+- Scalable and reusable structure
+- Designed for integration with CI/CD pipelines
+
+## 🔄 CI/CD Integration
+
+This project is designed to be integrated into CI/CD pipelines to ensure continuous data validation during model execution and deployment.
+
+## 📌 Use Cases
+- Machine Learning data validation
+- Data pipeline testing
+- Data quality assurance
+- Analytics and reporting validation
 
 ---
 
@@ -60,7 +120,7 @@ The framework is configured to generate rich reports for efficient debugging:
 ---
 
 ## Author
-Alexander
-Computer Science Student
-Game Development
-QA Automation Engineer (in progress)
+```
+Alexander Alves
+QA Automation Engineer | Quality Engineer
+```
