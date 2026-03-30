@@ -1,212 +1,114 @@
 # QA E2E Automation Suite
 
-End-to-End Test Automation Framework built using Java, Selenium WebDriver, Hibernate, and MySQL.
+This project is a complete End-to-End Test Automation Suite designed to validate web applications across multiple layers: UI, API, and database.
 
-This project demonstrates the implementation of a scalable, maintainable, and production-ready automation framework following industry best practices.
+It ensures full system reliability by validating user flows, backend integrations, and data consistency.
+
 
 ---
 
-## Overview
+## 🎯 Purpose
 
-The purpose of this project is to automate end-to-end testing of a web application, including:
+The main objective of this framework is to:
 
-* UI Automation
-* Database validation
-* Test reporting
-* Scalable architecture
-* Maintainable code using design patterns
-
-This framework is designed to simulate real-world QA Automation Engineer responsibilities.
+- Validate complete business flows (E2E)
+- Ensure consistency between UI, API, and database
+- Detect defects early in the development lifecycle
+- Provide scalable and maintainable automation
 
 ---
 
 ## Architecture
 
-This project follows a layered architecture:
+The framework follows a multi-layer architecture:
 
 ```
-qa-e2e-automation-suite/
-│
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   ├── config/          # Hibernate configuration
-│   │   │   ├── models/          # Entity classes
-│   │   │   ├── dao/             # Database access layer
-│   │   │   ├── utils/           # Utilities (Hibernate, Driver, etc.)
-│   │   │   └── pages/           # Page Object Model classes
-│   │   │
-│   │   └── resources/
-│   │       └── hibernate.cfg.xml
-│   │
-│   └── test/
-│       └── java/
-│           └── tests/           # Test classes
-│
-├── pom.xml
-├── .gitignore
-└── README.md
+src/
+├── tests/ # Test scenarios and execution
+├── pages/ # UI layer (Page Object Model)
+├── services/ # API layer (REST interactions)
+├── database/ # Database validation layer
+├── utils/ # Shared utilities and configurations
 ```
 
 ---
 
 ## Technologies Used
 
-* Java
-* Selenium WebDriver
-* Hibernate ORM
-* MySQL
-* Maven
-* JUnit / TestNG
-* Page Object Model (POM)
-* JDBC
-* Git & GitHub
+- Java
+- Selenium WebDriver
+- RestAssured
+- TestNG / JUnit
+- SQL (MySQL / SQL Server)
+- Maven
+- Docker (optional)
+- Jenkins (CI/CD)
 
 ---
 
-## Features
+## 🧪 Testing Strategy
 
-* UI Test Automation
-* Database Integration with Hibernate
-* Entity Mapping
-* Automated database validation
-* Scalable and maintainable structure
-* Separation of concerns (DAO, Models, Pages, Tests)
-* Maven dependency management
+This framework validates the system using:
 
----
-
-## Database Configuration
-
-This project uses MySQL with Hibernate ORM.
-
-Example configuration:
-
-```
-Database: qa_db
-Username: root
-Password: root
-Port: 3306
-```
-
-Hibernate configuration file:
-
-```
-src/main/resources/hibernate.cfg.xml
-```
+- ✅ UI Testing (user interactions)
+- ✅ API Testing (REST validation)
+- ✅ Database Testing (data integrity)
+- ✅ End-to-End flows
+- ✅ Regression testing
+- ✅ Negative scenarios
 
 ---
 
-## Hibernate Features Implemented
+## 🔄 Test Flow Example
 
-* SessionFactory configuration
-* Entity mapping
-* Automatic table creation
-* CRUD operations via DAO layer
-* MySQL dialect configuration
-
----
-
-## How to Run the Project
-
-### 1. Clone repository
-
-```
-git clone https://github.com/your-username/QA_Analyst.git
-```
+1. Create user via UI or API  
+2. Validate response and status code  
+3. Validate data persistence in database  
+4. Validate UI reflects correct data  
 
 ---
 
-### 2. Navigate to project
+## 🚀 How to Run
 
+1. Clone repository:
 ```
-cd QA_Analyst/qa-e2e-automation-suite
-```
-
----
-
-### 3. Configure database
-
-Create database in MySQL:
-
-```
-CREATE DATABASE qa_db;
-```
-
-Update credentials in:
-
-```
-hibernate.cfg.xml
-```
-
----
-
-### 4. Install dependencies
-
-```
+git clone https://github.com/AlexanderAlves77/QA_Analyst.git
+cd qa-e2e-automation-suite
 mvn clean install
-```
-
----
-
-### 5. Run tests
-
-```
 mvn test
-```
-
----
-
-## Design Patterns Used
-
-* Page Object Model (POM)
-* Data Access Object (DAO)
-* Singleton Pattern (Hibernate SessionFactory)
-* Layered Architecture
-
----
-
-## Example Entity
 
 ```
-UserEntity
-```
-
-Mapped using Hibernate ORM to database table.
 
 ---
 
-## Learning Objectives
+## 📊 Key Features
 
-This project demonstrates:
-
-* Real-world QA automation framework design
-* Database validation using Hibernate
-* Automation best practices
-* Clean architecture principles
-* Integration between UI and Database testing
+* Multi-layer validation (UI + API + DB)
+* End-to-end automation coverage
+* Scalable and modular structure
+* Reusable components
+* CI/CD ready
 
 ---
 
-## Future Improvements
+## 🔄 CI/CD Integration
 
-* Test reporting with Allure or ExtentReports
-* CI/CD integration (GitHub Actions)
-* Docker support
-* Parallel test execution
-* Logging with Log4j
+Designed for integration with CI/CD pipelines to ensure continuous testing and fast feedback.
+
+---
+
+## 📌 Use Cases
+
+* End-to-end validation of business processes
+* Regression testing
+* Integration validation between systems
+* Data consistency verification
 
 ---
 
 ## Author
+```
+Alexander Alves
+QA Automation Engineer | Quality Engineer
+```
 
-Alexander
-Computer Science Student
-Game Development
-QA Automation Engineer (in progress)
-
----
-
-## Status
-
-In development – actively expanding features and test coverage.
