@@ -40,7 +40,7 @@ public class UserSteps
 		response = RestAssured.given()
 				.contentType(ContentType.JSON)
 				.body(userPayload)
-				.post("http://localhost:8080" + endpoint);
+				.post("http://localhost:8090/api" + endpoint);
 	}
 	
 	@Then("the status code should be 201")
