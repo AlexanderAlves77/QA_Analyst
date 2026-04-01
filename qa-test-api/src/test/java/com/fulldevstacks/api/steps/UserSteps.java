@@ -20,8 +20,18 @@ public class UserSteps
 	private String userPayload;
 	
 	@Given("I have a valid user payload")
-	public void i_have_a_valid_user_payload() {
-		userPayload = "{ \\\"name\\\": \\\"Alex\\\", \\\"email\\\": \\\"alex@test.com\\\" }";
+	public void i_have_a_valid_user_payload() 
+	{
+		userPayload = """
+			    {
+			        "name": "Alexander Alves",
+			        "email": "alex@test.com",
+			        "jobTitle": "QA Engineer",
+			        "phone": "(21) 99999-9999",
+			        "age": 30,
+			        "active": true
+			    }
+			    """;
 	}
 	
 	@When("I send a POST request to {string}")
