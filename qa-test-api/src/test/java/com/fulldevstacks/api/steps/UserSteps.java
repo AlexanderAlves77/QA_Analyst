@@ -4,12 +4,18 @@ import io.cucumber.java.en.*;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.springframework.boot.test.context.SpringBootTest;
 
+import org.assertj.core.api.Assertions;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import com.fulldevstacks.qa_test_api.repository.UserRepository;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class UserSteps 
 {
+	@Autowired
+	private UserRepository userRepository;
+	
 	private Response response;
 	private String userPayload;
 	
@@ -30,5 +36,12 @@ public class UserSteps
 	@Then("the status code should be 201")
 	public void the_status_code_should_be() {
 		response.then().statusCode(201);
+	}
+	
+	@Then("the user should be persisted in the database")
+	public void verifyPersistence() 
+	{
+		boolean exists = userRepository.existsByEmail("alex@test.com");
+		Assertions.assertThat(exists).isTrue();
 	}
 }
