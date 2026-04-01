@@ -7,7 +7,4 @@ import org.junit.platform.suite.api.*;
 @IncludeEngines("cucumber")
 @SelectClasspathResource("features")
 @ConfigurationParameter(key = Constants.GLUE_PROPERTY_NAME, value = "com.fulldevstacks.api")
-public class CucumberTest 
-{
-
-}
+public class CucumberTest {}
