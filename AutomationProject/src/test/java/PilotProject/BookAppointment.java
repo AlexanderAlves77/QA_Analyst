@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 public class BookAppointment extends TextBaseClass {
 	
 	@Test
-	public void booAppointmentTest() {
+	public void booAppointmentTest() throws InterruptedException {
 		
 		// Read Data and Locators from Properties file.
 		driver.get(prop.getProperty("url"));
