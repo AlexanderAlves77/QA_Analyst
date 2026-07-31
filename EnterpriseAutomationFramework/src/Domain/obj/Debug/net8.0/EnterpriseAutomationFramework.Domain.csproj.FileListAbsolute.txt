@@ -1,0 +1,12 @@
+C:\Users\Alexander\Downloads\AECA\node_sistemas\QA_Analyst\EnterpriseAutomationFramework\src\Domain\bin\Debug\net8.0\EnterpriseAutomationFramework.Domain.deps.json
+C:\Users\Alexander\Downloads\AECA\node_sistemas\QA_Analyst\EnterpriseAutomationFramework\src\Domain\bin\Debug\net8.0\EnterpriseAutomationFramework.Domain.dll
+C:\Users\Alexander\Downloads\AECA\node_sistemas\QA_Analyst\EnterpriseAutomationFramework\src\Domain\bin\Debug\net8.0\EnterpriseAutomationFramework.Domain.pdb
+C:\Users\Alexander\Downloads\AECA\node_sistemas\QA_Analyst\EnterpriseAutomationFramework\src\Domain\obj\Debug\net8.0\EnterpriseAutomationFramework.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Alexander\Downloads\AECA\node_sistemas\QA_Analyst\EnterpriseAutomationFramework\src\Domain\obj\Debug\net8.0\EnterpriseAutomationFramework.Domain.AssemblyInfoInputs.cache
+C:\Users\Alexander\Downloads\AECA\node_sistemas\QA_Analyst\EnterpriseAutomationFramework\src\Domain\obj\Debug\net8.0\EnterpriseAutomationFramework.Domain.AssemblyInfo.cs
+C:\Users\Alexander\Downloads\AECA\node_sistemas\QA_Analyst\EnterpriseAutomationFramework\src\Domain\obj\Debug\net8.0\EnterpriseAutomationFramework.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Alexander\Downloads\AECA\node_sistemas\QA_Analyst\EnterpriseAutomationFramework\src\Domain\obj\Debug\net8.0\EnterpriseAutomationFramework.Domain.sourcelink.json
+C:\Users\Alexander\Downloads\AECA\node_sistemas\QA_Analyst\EnterpriseAutomationFramework\src\Domain\obj\Debug\net8.0\EnterpriseAutomationFramework.Domain.dll
+C:\Users\Alexander\Downloads\AECA\node_sistemas\QA_Analyst\EnterpriseAutomationFramework\src\Domain\obj\Debug\net8.0\refint\EnterpriseAutomationFramework.Domain.dll
+C:\Users\Alexander\Downloads\AECA\node_sistemas\QA_Analyst\EnterpriseAutomationFramework\src\Domain\obj\Debug\net8.0\EnterpriseAutomationFramework.Domain.pdb
+C:\Users\Alexander\Downloads\AECA\node_sistemas\QA_Analyst\EnterpriseAutomationFramework\src\Domain\obj\Debug\net8.0\ref\EnterpriseAutomationFramework.Domain.dll
