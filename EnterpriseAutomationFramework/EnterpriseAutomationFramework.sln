@@ -3,6 +3,28 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{15258180-D110-457E-96A1-00DFB15B5FC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnterpriseAutomationFramework.Core", "src\Core\EnterpriseAutomationFramework.Core.csproj", "{2AC0972F-E2AA-4645-8EBA-030D9D56DE45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnterpriseAutomationFramework.Domain", "src\Domain\EnterpriseAutomationFramework.Domain.csproj", "{39A3BABA-05D2-4103-9534-B6F34DBDBE58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnterpriseAutomationFramework.Application", "src\Application\EnterpriseAutomationFramework.Application.csproj", "{F86069AE-E6D3-454C-B2F7-2B482A22EDDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnterpriseAutomationFramework.Infrastructure", "src\Infrastructure\EnterpriseAutomationFramework.Infrastructure.csproj", "{544CDEE5-7DC3-4694-B618-83D214C51333}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnterpriseAutomationFramework.Shared", "src\Shared\EnterpriseAutomationFramework.Shared.csproj", "{52409730-ABB3-4110-A682-DFBA9866A4C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnterpriseAutomationFramework.Web", "src\Web\EnterpriseAutomationFramework.Web.csproj", "{06BE914E-4261-4568-94E6-095125CB40AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnterpriseAutomationFramework.Api", "src\Api\EnterpriseAutomationFramework.Api.csproj", "{BDCBE6AA-E033-4F41-B14F-EAA3EE0D0185}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnterpriseAutomationFramework.Database", "src\Database\EnterpriseAutomationFramework.Database.csproj", "{D61F2781-1282-4DA5-8CE9-1728097EDCD3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{3A785349-DEDD-4D9D-9B9B-145CDE9FAFBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnterpriseAutomationFramework.Tests", "tests\Tests\EnterpriseAutomationFramework.Tests.csproj", "{C0E85C15-B322-4EED-ADCA-30C124EEA5A1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -10,5 +32,54 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2AC0972F-E2AA-4645-8EBA-030D9D56DE45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AC0972F-E2AA-4645-8EBA-030D9D56DE45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AC0972F-E2AA-4645-8EBA-030D9D56DE45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AC0972F-E2AA-4645-8EBA-030D9D56DE45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39A3BABA-05D2-4103-9534-B6F34DBDBE58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39A3BABA-05D2-4103-9534-B6F34DBDBE58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39A3BABA-05D2-4103-9534-B6F34DBDBE58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39A3BABA-05D2-4103-9534-B6F34DBDBE58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F86069AE-E6D3-454C-B2F7-2B482A22EDDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F86069AE-E6D3-454C-B2F7-2B482A22EDDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F86069AE-E6D3-454C-B2F7-2B482A22EDDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F86069AE-E6D3-454C-B2F7-2B482A22EDDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{544CDEE5-7DC3-4694-B618-83D214C51333}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{544CDEE5-7DC3-4694-B618-83D214C51333}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{544CDEE5-7DC3-4694-B618-83D214C51333}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{544CDEE5-7DC3-4694-B618-83D214C51333}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52409730-ABB3-4110-A682-DFBA9866A4C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52409730-ABB3-4110-A682-DFBA9866A4C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52409730-ABB3-4110-A682-DFBA9866A4C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52409730-ABB3-4110-A682-DFBA9866A4C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06BE914E-4261-4568-94E6-095125CB40AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06BE914E-4261-4568-94E6-095125CB40AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06BE914E-4261-4568-94E6-095125CB40AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06BE914E-4261-4568-94E6-095125CB40AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDCBE6AA-E033-4F41-B14F-EAA3EE0D0185}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDCBE6AA-E033-4F41-B14F-EAA3EE0D0185}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDCBE6AA-E033-4F41-B14F-EAA3EE0D0185}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDCBE6AA-E033-4F41-B14F-EAA3EE0D0185}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D61F2781-1282-4DA5-8CE9-1728097EDCD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D61F2781-1282-4DA5-8CE9-1728097EDCD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D61F2781-1282-4DA5-8CE9-1728097EDCD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D61F2781-1282-4DA5-8CE9-1728097EDCD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0E85C15-B322-4EED-ADCA-30C124EEA5A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0E85C15-B322-4EED-ADCA-30C124EEA5A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0E85C15-B322-4EED-ADCA-30C124EEA5A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0E85C15-B322-4EED-ADCA-30C124EEA5A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2AC0972F-E2AA-4645-8EBA-030D9D56DE45} = {15258180-D110-457E-96A1-00DFB15B5FC8}
+		{39A3BABA-05D2-4103-9534-B6F34DBDBE58} = {15258180-D110-457E-96A1-00DFB15B5FC8}
+		{F86069AE-E6D3-454C-B2F7-2B482A22EDDE} = {15258180-D110-457E-96A1-00DFB15B5FC8}
+		{544CDEE5-7DC3-4694-B618-83D214C51333} = {15258180-D110-457E-96A1-00DFB15B5FC8}
+		{52409730-ABB3-4110-A682-DFBA9866A4C2} = {15258180-D110-457E-96A1-00DFB15B5FC8}
+		{06BE914E-4261-4568-94E6-095125CB40AA} = {15258180-D110-457E-96A1-00DFB15B5FC8}
+		{BDCBE6AA-E033-4F41-B14F-EAA3EE0D0185} = {15258180-D110-457E-96A1-00DFB15B5FC8}
+		{D61F2781-1282-4DA5-8CE9-1728097EDCD3} = {15258180-D110-457E-96A1-00DFB15B5FC8}
+		{C0E85C15-B322-4EED-ADCA-30C124EEA5A1} = {3A785349-DEDD-4D9D-9B9B-145CDE9FAFBC}
 	EndGlobalSection
 EndGlobal
