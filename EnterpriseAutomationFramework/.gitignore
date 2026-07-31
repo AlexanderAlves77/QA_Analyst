@@ -1,16 +1,14 @@
 # Visual Studio
 .vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
 
 # Build
-bin/
-obj/
+[Bb]in/
+[Oo]bj/
 
-# User files
-*.user
-*.suo
-
-# Rider
+# IDEs
 .idea/
-
-# VS Code
 .vscode/
