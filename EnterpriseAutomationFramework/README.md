@@ -1,12 +1,14 @@
 # Enterprise Automation Framework (EAF)
 
-> Framework Open Source para Automação de Testes desenvolvido em C# e .NET 8.
+> Framework Open Source para Automação de Testes desenvolvido em **C#** e **.NET 8**, construído passo a passo utilizando princípios de Engenharia de Software, Clean Architecture, SOLID e Design Patterns.
 
-## Objetivo
+## 🎯 Objetivo
 
-O Enterprise Automation Framework nasceu para demonstrar, de forma prática, como construir um framework corporativo utilizando princípios modernos de Engenharia de Software.
+O Enterprise Automation Framework nasceu para demonstrar, de forma prática, como construir um Framework corporativo de automação de testes desde sua concepção.
 
-Todo o desenvolvimento é documentado na série:
+Mais do que apresentar código, este projeto documenta cada decisão arquitetural, cada Sprint e cada evolução realizada durante o desenvolvimento.
+
+Todo o processo é acompanhado pela série:
 
 📚 **QA Engineering na Prática**
 
@@ -16,7 +18,19 @@ Cada decisão arquitetural é registrada.
 
 Cada evolução é versionada utilizando Conventional Commits.
 
-## Tecnologias
+---
+
+## 🏗 Filosofia do Projeto
+
+Acreditamos que qualidade não começa quando escrevemos o primeiro teste automatizado.
+
+Ela começa quando tomamos boas decisões de arquitetura.
+
+Por isso, cada funcionalidade implementada neste Framework possui um propósito claramente definido e uma documentação correspondente.
+
+---
+
+## 🛠 Tecnologias
 
 - .NET 8 LTS
 - C#
@@ -24,8 +38,21 @@ Cada evolução é versionada utilizando Conventional Commits.
 - Selenium
 - RestSharp
 - SQL Server
+- GitHub Actions (em construção)
 
-> **Este projeto está em desenvolvimento e evolui incrementalmente a cada capítulo da série.**
+---
+
+## 📂 Estrutura da Solution
+
+*(Será detalhada conforme novas camadas forem implementadas.)*
+
+---
+
+## 📈 Status
+
+🚧 Projeto em desenvolvimento.
+
+Construído incrementalmente através da série **QA Engineering na Prática**.
 
 
 ## Author
