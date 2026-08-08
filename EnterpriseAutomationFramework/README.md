@@ -101,6 +101,37 @@ Os componentes do Framework devem depender preferencialmente de abstrações em 
 
 ---
 
+## 🌎 Environment Configuration
+
+O Enterprise Automation Framework suporta configurações específicas por ambiente sem exigir alterações no código.
+
+Ambientes inicialmente suportados:
+
+- Development
+- QA
+- Homolog
+- Production
+
+A seleção do ambiente é realizada através da variável:
+
+`EAF_ENVIRONMENT`
+
+Exemplo no Windows CMD:
+
+`set EAF_ENVIRONMENT=QA`
+
+A configuração utiliza uma estratégia de composição baseada em:
+
+1. `appsettings.json`
+2. `appsettings.{Environment}.json`
+3. Environment Variables
+
+Arquivos locais e informações sensíveis não devem ser versionados.
+
+Secrets deverão ser fornecidos através de mecanismos seguros como Environment Variables, User Secrets ou Secret Managers utilizados pela infraestrutura de CI/CD.
+
+---
+
 ## 📂 Estrutura da Solution
 
 *(Será detalhada conforme novas camadas forem implementadas.)*
