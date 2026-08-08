@@ -24,4 +24,22 @@ public class DependencyInjectionTests
         Assert.That(loggingService, Is.Not.Null);
         Assert.That(loggingService, Is.TypeOf<SerilogLoggingService>());
     }
+
+    [Test]
+    public void AddEafLogging_ShouldRegisterLoggingServiceAsSingleton()
+    {
+        var services = new ServiceCollection();
+
+        var logger = new LoggerConfiguration().CreateLogger();
+
+        services.AddEafLogging(logger);
+
+        using var provider = services.BuildServiceProvider();
+
+        var firstInstance = provider.GetRequiredService<ILoggingService>();
+
+        var secondInstance = provider.GetRequiredService<ILoggingService>();
+
+        Assert.That(secondInstance, Is.SameAs(firstInstance));
+    }
 }
