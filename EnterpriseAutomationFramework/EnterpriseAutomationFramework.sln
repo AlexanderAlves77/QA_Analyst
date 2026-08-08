@@ -25,13 +25,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{3A785349
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnterpriseAutomationFramework.Tests", "tests\Tests\EnterpriseAutomationFramework.Tests.csproj", "{C0E85C15-B322-4EED-ADCA-30C124EEA5A1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens de Solução", "{380A7511-A354-6D7A-0CC0-8FA1F1BA7B6C}"
+	ProjectSection(SolutionItems) = preProject
+		appsettings.json = appsettings.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{2AC0972F-E2AA-4645-8EBA-030D9D56DE45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -71,6 +73,9 @@ Global
 		{C0E85C15-B322-4EED-ADCA-30C124EEA5A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0E85C15-B322-4EED-ADCA-30C124EEA5A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2AC0972F-E2AA-4645-8EBA-030D9D56DE45} = {15258180-D110-457E-96A1-00DFB15B5FC8}
 		{39A3BABA-05D2-4103-9534-B6F34DBDBE58} = {15258180-D110-457E-96A1-00DFB15B5FC8}
@@ -81,5 +86,8 @@ Global
 		{BDCBE6AA-E033-4F41-B14F-EAA3EE0D0185} = {15258180-D110-457E-96A1-00DFB15B5FC8}
 		{D61F2781-1282-4DA5-8CE9-1728097EDCD3} = {15258180-D110-457E-96A1-00DFB15B5FC8}
 		{C0E85C15-B322-4EED-ADCA-30C124EEA5A1} = {3A785349-DEDD-4D9D-9B9B-145CDE9FAFBC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {60FBDF30-3D83-40FC-BFDD-CBFE268DF295}
 	EndGlobalSection
 EndGlobal
