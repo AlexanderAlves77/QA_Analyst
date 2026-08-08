@@ -70,6 +70,25 @@ O Core permanece desacoplado da implementação concreta do Serilog.
 
 ---
 
+## 💉 Dependency Injection
+
+O Enterprise Automation Framework utiliza Dependency Injection para centralizar a criação e composição de seus serviços.
+A infraestrutura inicial utiliza o container nativo do ecossistema .NET através de `IServiceCollection` e `IServiceProvider`.
+
+A arquitetura atual inclui:
+
+- registro centralizado de serviços;
+- métodos de extensão para organização da composição;
+- integração do Configuration Engine;
+- integração do Logging Engine;
+- resolução através de abstrações;
+- controle explícito dos ciclos de vida;
+- preparação para serviços de Browser, API, Database e Reporting.
+
+Os componentes do Framework devem depender preferencialmente de abstrações em vez de criar diretamente implementações concretas.
+
+---
+
 ## 🛠 Tecnologias
 
 - .NET 8 LTS
