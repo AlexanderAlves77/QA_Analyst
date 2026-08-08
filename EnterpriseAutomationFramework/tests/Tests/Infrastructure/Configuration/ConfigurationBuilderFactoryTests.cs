@@ -35,4 +35,25 @@ public class ConfigurationBuilderFactoryTests
 
         Assert.That(environment, Is.EqualTo("QA"));
     }
+
+    [Test]
+    public void Create_ShouldPrioritizeEnvironmentVariables()
+    {
+        Environment.SetEnvironmentVariable(EnvironmentVariableName, "QA");
+
+        Environment.SetEnvironmentVariable("Logging__MinimumLevel", "Debug");
+
+        try
+        {
+            var configuration = ConfigurationBuilderFactory.Create();
+
+            var minimumLevel = configuration["Logging:MinimumLevel"];
+
+            Assert.That(minimumLevel, Is.EqualTo("Debug"));
+        }
+        finally
+        {
+            Environment.SetEnvironmentVariable("Logging__MinimumLevel", null);
+        }        
+    }
 }
