@@ -54,6 +54,15 @@ Este projeto segue os princípios do **Keep a Changelog** e do **Semantic Versio
 - Configuration precedence tests
 - Local configuration protection
 
+- Framework Bootstrap
+- EAF Bootstrap Context
+- Centralized infrastructure initialization
+- Service Provider validation
+- Shared Configuration instance
+- Bootstrap integration tests
+- Startup validation foundation
+- Fail Fast initialization strategy
+
 
 ### Changed
 
