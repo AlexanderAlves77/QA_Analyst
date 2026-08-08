@@ -34,7 +34,7 @@ public static class EafBootstrapper
 
         var services = new ServiceCollection();
 
-        services.AddEafInfrastructure(logger);
+        services.AddEafInfrastructure(configuration, logger);
 
         var serviceProvider = services.BuildServiceProvider(
             new ServiceProviderOptions
