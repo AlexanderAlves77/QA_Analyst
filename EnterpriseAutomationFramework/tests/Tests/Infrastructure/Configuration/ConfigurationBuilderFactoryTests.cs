@@ -23,4 +23,16 @@ public class ConfigurationBuilderFactoryTests
 
         Assert.That(environment, Is.EqualTo("Development"));
     }
+
+    [Test]
+    public void Create_ShouldLoadQAConfiguration_WhenEnvironmentIsQA()
+    {
+        Environment.SetEnvironmentVariable(EnvironmentVariableName, "QA");
+
+        var configuration = ConfigurationBuilderFactory.Create();
+
+        var environment = configuration["Framework:Environment"];
+
+        Assert.That(environment, Is.EqualTo("QA"));
+    }
 }
