@@ -17,6 +17,12 @@ Este projeto segue os princípios do **Keep a Changelog** e do **Semantic Versio
 - FrameworkException
 - Result Pattern
 - README inicial
+- Configuration Engine inicial
+- FrameworkSettings
+- IConfigurationProvider
+- JsonConfigurationProvider
+- validação de configurações
+- testes unitários do mecanismo de configuração
 
 ### Changed
 
