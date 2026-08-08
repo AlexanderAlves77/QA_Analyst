@@ -24,4 +24,14 @@ public class EafBootstrapperTests
         Assert.That(context.Configuration, Is.Not.Null);
         Assert.That(context.Services, Is.Not.Null);
     }
+
+    [Test]
+    public void Initialize_ShouldUseConfiguredEnvironment()
+    {
+        Environment.SetEnvironmentVariable(EnvironmentVariableName, "QA");
+
+        using var context = EafBootstrapper.Initialize();
+
+        Assert.That(context.Environment, Is.EqualTo("QA"));
+    }
 }
