@@ -30,7 +30,7 @@
 
 ✅ Dependency Injection
 
-⬜ Environment Management
+✅ Environment Management
 
 ⬜ Framework Bootstrap
 
