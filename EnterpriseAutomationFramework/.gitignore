@@ -231,6 +231,11 @@ appsettings.QA.local.json
 appsettings.Homolog.local.json
 appsettings.Production.local.json
 
+# Local environment configuration
+
+appsettings.Local.json
+appsettings.*.Local.json
+
 # Secret configuration
 
 secrets.json
