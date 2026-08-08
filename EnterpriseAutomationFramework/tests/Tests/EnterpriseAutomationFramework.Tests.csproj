@@ -26,6 +26,28 @@
     <ProjectReference Include="..\..\src\Infrastructure\EnterpriseAutomationFramework.Infrastructure.csproj" />
   </ItemGroup>
 
+	<ItemGroup>
+		<None Include="..\..\appsettings.json" Link="appsettings.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+
+		<None Include="..\..\appsettings.Development.json" Link="appsettings.Development.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+
+		<None Include="..\..\appsettings.QA.json" Link="appsettings.QA.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+
+		<None Include="..\..\appsettings.Homolog.json" Link="appsettings.Homolog.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+
+		<None Include="..\..\appsettings.Production.json" Link="appsettings.Production.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
   <ItemGroup>
     <Folder Include="DependencyInjection\" />
   </ItemGroup>
