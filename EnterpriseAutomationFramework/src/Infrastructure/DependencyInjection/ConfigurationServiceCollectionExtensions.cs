@@ -8,10 +8,8 @@ namespace EnterpriseAutomationFramework.Tests.DependencyInjection;
 public static class ConfigurationServiceCollectionExtensions
 {
     public static IServiceCollection AddEafConfiguration(
-        this IServiceCollection services)
+        this IServiceCollection services, IConfiguration configuration)
     {
-        IConfiguration configuration = ConfigurationBuilderFactory.Create();
-
         services.AddSingleton(configuration);
 
         services.AddSingleton<IFrameworkConfigurationProvider, 
