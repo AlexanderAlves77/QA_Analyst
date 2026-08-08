@@ -24,13 +24,15 @@
 
 ## Sprint 3
 
-⬜ Configuration
+✅ Configuration Engine
 
-⬜ Logging
+⬜ Structured Logging
 
 ⬜ Dependency Injection
 
-⬜ Validation
+⬜ Environment Management
+
+⬜ Framework Bootstrap
 
 ---
 
