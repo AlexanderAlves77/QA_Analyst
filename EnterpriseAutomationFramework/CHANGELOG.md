@@ -43,6 +43,17 @@ Este projeto segue os princípios do **Keep a Changelog** e do **Semantic Versio
 - Dependency resolution tests
 - Singleton lifetime validation
 
+- Multi-environment configuration support
+- Development environment settings
+- QA environment settings
+- Homolog environment settings
+- Production environment settings
+- EAF_ENVIRONMENT selection
+- Environment-aware Configuration Builder
+- Environment Variable overrides
+- Configuration precedence tests
+- Local configuration protection
+
 
 ### Changed
 
