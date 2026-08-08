@@ -23,6 +23,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Core\EnterpriseAutomationFramework.Core.csproj" />
+    <ProjectReference Include="..\..\src\Infrastructure\EnterpriseAutomationFramework.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DependencyInjection\" />
   </ItemGroup>
 
 </Project>
