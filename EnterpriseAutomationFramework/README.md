@@ -49,6 +49,27 @@ O suporte completo a Environment Variables, Secrets e configurações específic
 
 ---
 
+## 📝 Structured Logging
+
+O Enterprise Automation Framework possui uma infraestrutura centralizada de Logging.
+O objetivo é permitir que eventos da execução sejam registrados de forma padronizada, estruturada e preparada para análise.
+
+A arquitetura inicial utiliza:
+
+- abstração através de `ILoggingService`;
+- implementação utilizando Serilog;
+- configuração através de `LoggingSettings`;
+- saída para Console;
+- saída para arquivo;
+- logs estruturados em JSON;
+- rotação diária de arquivos;
+- validação das configurações de Logging;
+- preparação para Correlation ID e observabilidade.
+
+O Core permanece desacoplado da implementação concreta do Serilog.
+
+---
+
 ## 🛠 Tecnologias
 
 - .NET 8 LTS
