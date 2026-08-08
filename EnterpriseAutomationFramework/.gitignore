@@ -1,14 +1,42 @@
-# Visual Studio
-.vs/
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
-
-# Build
+# Build results
 [Bb]in/
 [Oo]bj/
+[Ll]og/
+[Ll]ogs/
+[Rr]elease/
+[Dd]ebug/
+x64/
+x86/
+build/
 
-# IDEs
+# Visual Studio files
+*.suo
+*.user
+*.userprefs
+*.sln.docstates
+.vs/
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# JetBrains Rider
 .idea/
-.vscode/
+*.sln.iml
+
+# Backup and cache files
+*.bak
+*.cache
+*.opendb
+*.sdf
+
+# Test results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# User specific joyful packages or publish output
+[Oo]utput/
+[Pp]ublish/
