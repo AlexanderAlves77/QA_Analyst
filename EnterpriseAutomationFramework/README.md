@@ -89,6 +89,44 @@ Os componentes do Framework devem depender preferencialmente de abstrações em 
 
 ---
 
+## 🚀 Framework Bootstrap
+
+O Enterprise Automation Framework possui um processo centralizado de inicialização responsável por preparar sua infraestrutura antes da execução dos testes.
+
+O Bootstrap coordena:
+
+1. identificação do ambiente;
+2. carregamento das configurações;
+3. validação das configurações críticas;
+4. inicialização do Structured Logging;
+5. registro das dependências;
+6. construção e validação do Service Provider;
+7. disponibilização da infraestrutura do Framework.
+
+Exemplo conceitual:
+
+`using var framework = EafBootstrapper.Initialize();`
+
+O Bootstrap atua como ponto central de composição da infraestrutura e evita que projetos consumidores precisem conhecer os detalhes internos de inicialização.
+
+### Fail Fast
+
+Configurações e dependências críticas devem ser validadas durante o Startup.
+
+O objetivo é impedir que uma execução de testes seja iniciada com o Framework em um estado inválido.
+
+### Current Infrastructure
+
+- Configuration Engine
+- Structured Logging
+- Dependency Injection
+- Environment Management
+- Framework Bootstrap
+
+Essa fundação será utilizada pelas próximas infraestruturas do EAF, incluindo Browser/Selenium, APIs e Database.
+
+---
+
 ## 🛠 Tecnologias
 
 - .NET 8 LTS
