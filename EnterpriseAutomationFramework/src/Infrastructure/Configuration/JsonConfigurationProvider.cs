@@ -3,7 +3,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace EnterpriseAutomationFramework.Infrastructure.Configuration;
 
-public sealed class JsonConfigurationProvider
+public sealed class JsonConfigurationProvider : IFrameworkConfigurationProvider
 {
     private readonly IConfiguration _configuration;
 
