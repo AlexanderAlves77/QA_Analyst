@@ -30,6 +30,25 @@ Por isso, cada funcionalidade implementada neste Framework possui um propósito 
 
 ---
 
+## ⚙️ Configuration Engine
+
+O Enterprise Automation Framework possui uma infraestrutura centralizada de configuração.
+
+O objetivo é permitir que configurações operacionais sejam alteradas sem modificar ou recompilar o código do Framework.
+
+A arquitetura inicial utiliza:
+
+- configuração fortemente tipada;
+- `appsettings.json`;
+- abstração através de `IConfigurationProvider`;
+- implementação desacoplada na camada Infrastructure;
+- validação de configurações;
+- preparação para múltiplos ambientes.
+
+O suporte completo a Environment Variables, Secrets e configurações específicas por ambiente será implementado progressivamente.
+
+---
+
 ## 🛠 Tecnologias
 
 - .NET 8 LTS
