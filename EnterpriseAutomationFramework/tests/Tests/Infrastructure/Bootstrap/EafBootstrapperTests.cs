@@ -1,6 +1,7 @@
 ﻿using EnterpriseAutomationFramework.Core.Abstractions;
 using EnterpriseAutomationFramework.Infrastructure.Bootstrap;
 using EnterpriseAutomationFramework.Infrastructure.Configuration;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace EnterpriseAutomationFramework.Tests.Infrastructure.Bootstrap;
@@ -47,5 +48,17 @@ public class EafBootstrapperTests
         var loggingService = context.Services.GetService<ILoggingService>();
 
         Assert.That(loggingService, Is.Not.Null);
+    }
+
+    [Test]
+    public void Initialize_ShouldShareConfigurationWithContainer()
+    {
+        Environment.SetEnvironmentVariable(EnvironmentVariableName, "Development");
+
+        using var context = EafBootstrapper.Initialize();
+
+        var resolvedConfiguration = context.Services.GetService<IConfiguration>();
+
+        Assert.That(resolvedConfiguration, Is.SameAs(context.Configuration));
     }
 }
