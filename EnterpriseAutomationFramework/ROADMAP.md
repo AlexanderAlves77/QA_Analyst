@@ -28,7 +28,7 @@
 
 ✅ Structured Logging
 
-⬜ Dependency Injection
+✅ Dependency Injection
 
 ⬜ Environment Management
 
