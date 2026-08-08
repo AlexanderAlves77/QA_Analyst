@@ -35,6 +35,15 @@ Este projeto segue os princípios do **Keep a Changelog** e do **Semantic Versio
 - Logging settings validation
 - Logging unit tests
 
+- Dependency Injection infrastructure
+- IServiceCollection-based service registration
+- Configuration service registration
+- Logging service registration
+- Infrastructure composition extensions
+- Dependency resolution tests
+- Singleton lifetime validation
+
+
 ### Changed
 
 - Organização dos projetos utilizando CLI do .NET
