@@ -13,7 +13,7 @@ public static class ConfigurationBuilderFactory
                 ?? EnvironmentNames.Development;
 
         return new ConfigurationBuilder()
-            .SetBasePath(Directory.GetCurrentDirectory())
+            .SetBasePath(AppContext.BaseDirectory)
             .AddJsonFile(
                 "appsettings.json",
                 optional: false,
