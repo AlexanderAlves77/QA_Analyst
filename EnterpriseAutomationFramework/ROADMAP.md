@@ -32,19 +32,27 @@
 
 ✅ Environment Management
 
-⬜ Framework Bootstrap
+✅ Framework Bootstrap
 
 ---
 
-## Sprint 4
+## Sprint 4 — Test Automation Infrastructure
 
-⬜ Selenium
+⬜ Browser Abstractions
 
-⬜ WebDriver Factory
+⬜ Selenium Infrastructure
 
-⬜ Driver Manager
+⬜ Driver Management
 
-⬜ Wait Engine
+⬜ Browser Configuration
+
+⬜ Wait Strategy
+
+⬜ Page Infrastructure
+
+⬜ API Infrastructure
+
+⬜ Database Infrastructure
 
 ---
 
