@@ -1,4 +1,5 @@
 ﻿using EnterpriseAutomationFramework.Core.Abstractions;
+using EnterpriseAutomationFramework.Core.Abstractions.Browser;
 using EnterpriseAutomationFramework.Infrastructure.Configuration;
 using EnterpriseAutomationFramework.Infrastructure.DependencyInjection;
 using EnterpriseAutomationFramework.Infrastructure.Logging;
@@ -59,5 +60,39 @@ public class DependencyInjectionTests
         var factory = provider.GetService<IWebDriverFactory>();
 
         Assert.That(factory, Is.Not.Null);
+    }
+
+    [Test]
+    public void AddEafWeb_ShouldResolveBrowserFactory()
+    {
+        var configuration = ConfigurationBuilderFactory.Create();
+
+        var services = new ServiceCollection();
+
+        services.AddEafWeb(configuration);
+
+        using var provider = services.BuildServiceProvider();
+
+        var factory = provider.GetService<IWebDriverFactory>();
+
+        Assert.That(factory, Is.Not.Null);
+    }
+
+    [Test]
+    public void AddEafWeb_ShouldResolveBrowserProviderWithinScope()
+    {
+        var configuration = ConfigurationBuilderFactory.Create();
+
+        var services = new ServiceCollection();
+
+        services.AddEafWeb(configuration);
+
+        using var provider = services.BuildServiceProvider();
+
+        using var scope = provider.CreateScope();
+
+        var browserProvider = scope.ServiceProvider.GetService<IBrowserProvider>();
+
+        Assert.That(browserProvider, Is.Not.Null);
     }
 }
