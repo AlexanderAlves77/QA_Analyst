@@ -1,6 +1,8 @@
 ﻿using EnterpriseAutomationFramework.Core.Abstractions;
+using EnterpriseAutomationFramework.Infrastructure.Configuration;
 using EnterpriseAutomationFramework.Infrastructure.DependencyInjection;
 using EnterpriseAutomationFramework.Infrastructure.Logging;
+using EnterpriseAutomationFramework.Infrastructure.Web.Drivers;
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 
@@ -41,5 +43,21 @@ public class DependencyInjectionTests
         var secondInstance = provider.GetRequiredService<ILoggingService>();
 
         Assert.That(secondInstance, Is.SameAs(firstInstance));
+    }
+
+    [Test]
+    public void AddEafLogging_ShouldRegisterWebDriverFactory()
+    {
+        var configuration = ConfigurationBuilderFactory.Create();
+
+        var services = new ServiceCollection();
+
+        services.AddEafWeb(configuration);
+
+        using var provider = services.BuildServiceProvider();
+
+        var factory = provider.GetService<IWebDriverFactory>();
+
+        Assert.That(factory, Is.Not.Null);
     }
 }
