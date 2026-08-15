@@ -236,6 +236,41 @@ The Core remains independent from Selenium-specific types.
 
 ---
 
+### Selenium Browser Infrastructure
+
+The Selenium implementation is isolated in the Infrastructure layer.
+Current implementations include:
+
+- `SeleniumBrowser`
+- `SeleniumBrowserFactory`
+- `SeleniumNavigator`
+- `SeleniumElementFinder`
+- `SeleniumWebElementWrapper`
+- `SeleniumLocatorMapper`
+- `BrowserProvider`
+
+The Core continues to depend only on browser abstractions.
+
+### Browser Lifecycle
+
+Browser instances are provided through `IBrowserProvider`.
+The provider lazily creates a browser only when required and reuses it within its execution scope.
+`IBrowserProvider` is registered with a scoped lifetime to prepare the framework for isolated and parallel test execution.
+Browser resources are released through the `IDisposable` lifecycle.
+
+### Selenium Boundary
+
+Selenium-specific types such as:
+
+- `IWebDriver`
+- `IWebElement`
+- `By`
+
+must remain inside the Infrastructure layer.
+Tests and higher-level framework components should prefer EAF abstractions.
+
+---
+
 ## 📂 Estrutura da Solution
 
 *(Será detalhada conforme novas camadas forem implementadas.)*
