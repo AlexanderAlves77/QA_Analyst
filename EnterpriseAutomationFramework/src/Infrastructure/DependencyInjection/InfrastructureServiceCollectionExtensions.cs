@@ -13,6 +13,7 @@ public static class InfrastructureServiceCollectionExtensions
     {
         services.AddEafConfiguration(configuration);
         services.AddEafLogging(logger);
+        services.AddEafWeb(configuration);
 
         return services;
     }
