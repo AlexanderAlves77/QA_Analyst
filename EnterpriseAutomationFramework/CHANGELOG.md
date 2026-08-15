@@ -63,6 +63,18 @@ Este projeto segue os princípios do **Keep a Changelog** e do **Semantic Versio
 - Startup validation foundation
 - Fail Fast initialization strategy
 
+- Browser core abstractions
+- Browser factory abstraction
+- Browser provider abstraction
+- Navigation abstraction
+- Element finder abstraction
+- Web element wrapper abstraction
+- Browser type definitions
+- Locator type definitions
+- Browser information model
+- Element locator model
+- Browser core tests
+
 
 ### Changed
 
