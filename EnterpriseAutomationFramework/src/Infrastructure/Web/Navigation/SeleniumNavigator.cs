@@ -9,8 +9,7 @@ public sealed class SeleniumNavigator : INavigator
 
     public SeleniumNavigator(IWebDriver driver)
     {
-        _driver = driver
-            ?? throw new ArgumentNullException(nameof(driver));
+        _driver = driver ?? throw new ArgumentNullException(nameof(driver));
     }
 
     public void GoTo(string url)
@@ -18,6 +17,11 @@ public sealed class SeleniumNavigator : INavigator
         ArgumentException.ThrowIfNullOrWhiteSpace(url);
 
         _driver.Navigate().GoToUrl(url);
+    }
+
+    public void Back()
+    {
+        _driver.Navigate().Back();
     }
 
     public void Forward()
