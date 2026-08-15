@@ -75,6 +75,18 @@ Este projeto segue os princípios do **Keep a Changelog** e do **Semantic Versio
 - Element locator model
 - Browser core tests
 
+- Browser Settings
+- Browser Settings validation
+- Environment-specific Browser configuration
+- Selenium WebDriver infrastructure
+- Selenium WebDriver Factory
+- Browser Options Factory
+- Chrome browser options
+- Edge browser options
+- Firefox browser options
+- Dependency Injection registration for Web infrastructure
+- Browser configuration tests
+
 
 ### Changed
 
