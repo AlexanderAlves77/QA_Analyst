@@ -170,7 +170,6 @@ Secrets deverão ser fornecidos através de mecanismos seguros como Environment 
 
 ---
 
-
 ## 🌐 Web Automation Infrastructure
 
 The Enterprise Automation Framework is designed to keep its Core independent from specific browser automation technologies.
@@ -204,6 +203,36 @@ Supporting enums:
 - `LocatorType`
 
 Selenium WebDriver will be implemented in the Infrastructure layer and will depend on these contracts rather than introducing Selenium dependencies into the Core.
+
+---
+
+### Browser Configuration
+
+Browser execution is configured through `BrowserSettings`.
+Current settings include:
+
+- browser type;
+- headless execution;
+- window width and height;
+- page load timeout;
+- script timeout;
+- implicit wait;
+- optional browser binary path;
+- additional browser arguments.
+
+Browser settings can be overridden through environment-specific configuration and Environment Variables.
+
+### Driver Management
+
+Selenium WebDriver is isolated in the Infrastructure layer.
+The EAF currently uses:
+
+- `IWebDriverFactory`
+- `SeleniumWebDriverFactory`
+- `BrowserOptionsFactory`
+
+Driver executable resolution is delegated to Selenium's native driver management capabilities whenever possible.
+The Core remains independent from Selenium-specific types.
 
 ---
 
