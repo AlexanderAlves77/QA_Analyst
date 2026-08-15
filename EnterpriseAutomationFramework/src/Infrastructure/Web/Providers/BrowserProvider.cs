@@ -20,7 +20,7 @@ public sealed class BrowserProvider : IBrowserProvider, IDisposable
     {
         get
         {
-            _browser ?? = _browserFactory.Create(_settings.Type);
+            _browser ??= _browserFactory.Create(_settings.Type);
             return _browser;
         }
     }
