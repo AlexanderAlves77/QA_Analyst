@@ -36,23 +36,37 @@
 
 ---
 
-## Sprint 4 — Test Automation Infrastructure
+## Sprint 4 — Web Automation Infrastructure
 
-⬜ Browser Abstractions
+### Browser Core
 
-⬜ Selenium Infrastructure
+- [x] Browser abstractions
+- [x] Navigation abstraction
+- [x] Element abstraction
+- [x] Locator model
+- [x] Browser Factory contract
+- [x] Browser Provider contract
 
-⬜ Driver Management
+### Selenium Infrastructure
 
-⬜ Browser Configuration
+- [ ] Selenium WebDriver
+- [ ] Selenium Browser implementation
+- [ ] Selenium Navigator
+- [ ] Selenium Element Finder
+- [ ] Selenium Web Element Wrapper
+- [ ] Locator Mapper
+- [ ] Driver Factory
+- [ ] Browser Options
+- [ ] Driver Management
+- [ ] Headless execution
+- [ ] Remote execution
 
-⬜ Wait Strategy
+### Reliability
 
-⬜ Page Infrastructure
-
-⬜ API Infrastructure
-
-⬜ Database Infrastructure
+- [ ] Wait Strategy
+- [ ] Element Actions
+- [ ] Retry Strategy
+- [ ] Browser lifecycle
 
 ---
 
