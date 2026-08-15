@@ -87,6 +87,17 @@ Este projeto segue os princípios do **Keep a Changelog** e do **Semantic Versio
 - Dependency Injection registration for Web infrastructure
 - Browser configuration tests
 
+- Selenium Browser implementation
+- Selenium Browser Factory
+- Browser Provider implementation
+- Selenium navigation adapter
+- Selenium element finder
+- Selenium web element wrapper
+- Selenium locator mapper
+- Scoped browser lifecycle
+- Selenium browser DI registrations
+- Selenium infrastructure tests
+
 
 ### Changed
 
