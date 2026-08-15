@@ -1,6 +1,9 @@
-﻿using EnterpriseAutomationFramework.Core.Configuration;
+﻿using EnterpriseAutomationFramework.Core.Abstractions.Browser;
+using EnterpriseAutomationFramework.Core.Configuration;
 using EnterpriseAutomationFramework.Core.Validation;
+using EnterpriseAutomationFramework.Infrastructure.Web.Browsers;
 using EnterpriseAutomationFramework.Infrastructure.Web.Drivers;
+using EnterpriseAutomationFramework.Infrastructure.Web.Providers;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -21,6 +24,10 @@ public static class WebServiceCollectionExtensions
         services.AddSingleton(browserSettings);
 
         services.AddSingleton<IWebDriverFactory, SeleniumWebDriverFactory>();
+
+        services.AddTransient<IBrowserFactory, SeleniumBrowserFactory>();
+
+        services.AddScoped<IBrowserProvider, BrowserProvider>();
 
         return services;
     }
