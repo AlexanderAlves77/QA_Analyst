@@ -170,6 +170,43 @@ Secrets deverão ser fornecidos através de mecanismos seguros como Environment 
 
 ---
 
+
+## 🌐 Web Automation Infrastructure
+
+The Enterprise Automation Framework is designed to keep its Core independent from specific browser automation technologies.
+The Core defines contracts for:
+
+- Browser lifecycle;
+- navigation;
+- element discovery;
+- web element interaction;
+- browser creation;
+- browser provisioning;
+- browser and locator types.
+
+Current abstractions:
+
+- `IBrowser`
+- `IBrowserFactory`
+- `IBrowserProvider`
+- `INavigator`
+- `IElementFinder`
+- `IWebElementWrapper`
+
+Supporting models:
+
+- `BrowserInfo`
+- `ElementLocator`
+
+Supporting enums:
+
+- `BrowserType`
+- `LocatorType`
+
+Selenium WebDriver will be implemented in the Infrastructure layer and will depend on these contracts rather than introducing Selenium dependencies into the Core.
+
+---
+
 ## 📂 Estrutura da Solution
 
 *(Será detalhada conforme novas camadas forem implementadas.)*
