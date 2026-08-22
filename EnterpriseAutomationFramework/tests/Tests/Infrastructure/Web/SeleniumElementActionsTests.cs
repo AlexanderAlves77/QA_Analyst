@@ -38,7 +38,7 @@ internal class SeleniumElementActionsTests
 
         Assert.Multiple(() =>
         {
-            Assert.That(element.WasCleared, Is.False);
+            Assert.That(element.WasCleared, Is.True);
             Assert.That(element.EnteredText, Is.EqualTo("Alexander"));
         });
     }
@@ -58,7 +58,7 @@ internal class SeleniumElementActionsTests
 
         Assert.Multiple(() =>
         {
-            Assert.That(element.WasCleared, Is.True);
+            Assert.That(element.WasCleared, Is.False);
             Assert.That(element.EnteredText, Is.EqualTo("Alexander"));
         });
     }
