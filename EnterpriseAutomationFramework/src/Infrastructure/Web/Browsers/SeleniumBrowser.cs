@@ -16,12 +16,17 @@ public sealed class SeleniumBrowser : IBrowser
 
     public IElementFinder Elements { get; }
 
+    public IWaitStrategy Wait { get; }
+
+    public IElementFinder Actions { get; }
+
     public string CurrentUrl => _driver.Url;
 
     public string Title => _driver.Title;
 
     public SeleniumBrowser(IWebDriver driver, BrowserInfo info,
-        INavigator navigator, IElementFinder elements)
+        INavigator navigator, IElementFinder elements, IWaitStrategy wait,
+        IElementFinder actions)
     {
         _driver = driver ?? throw new ArgumentNullException(nameof(driver));
 
@@ -30,6 +35,10 @@ public sealed class SeleniumBrowser : IBrowser
         Navigator = navigator ?? throw new ArgumentNullException(nameof(navigator));
 
         Elements = elements ?? throw new ArgumentNullException(nameof(elements));
+
+        Wait = wait ?? throw new ArgumentNullException(nameof(elements));
+
+        Actions = actions ?? throw new ArgumentNullException(nameof(actions));
     }
 
     public void Close()
