@@ -19,9 +19,16 @@ public static class WebServiceCollectionExtensions
             .Get<BrowserSettings>()
             ?? throw new InvalidOperationException("Browser configuration was not found.");
 
+        var waitSettings = configuration
+            .GetSection(WaitSettings.SectionName)
+            .Get<WaitSettings>()
+            ?? throw new InvalidOperationException("Wait configuration was not found.");
+
+        WaitSettingsValidator.Validate(waitSettings);
         BrowserSettingsValidator.Validate(browserSettings);
 
         services.AddSingleton(browserSettings);
+        services.AddSingleton(waitSettings);
 
         services.AddSingleton<IWebDriverFactory, SeleniumWebDriverFactory>();
 
