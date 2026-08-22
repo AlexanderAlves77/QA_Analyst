@@ -18,7 +18,7 @@ public sealed class SeleniumBrowser : IBrowser
 
     public IWaitStrategy Wait { get; }
 
-    public IElementFinder Actions { get; }
+    public IElementActions Actions { get; }
 
     public string CurrentUrl => _driver.Url;
 
@@ -26,7 +26,7 @@ public sealed class SeleniumBrowser : IBrowser
 
     public SeleniumBrowser(IWebDriver driver, BrowserInfo info,
         INavigator navigator, IElementFinder elements, IWaitStrategy wait,
-        IElementFinder actions)
+        IElementActions actions)
     {
         _driver = driver ?? throw new ArgumentNullException(nameof(driver));
 
