@@ -38,13 +38,13 @@ internal class SeleniumElementActionsTests
 
         Assert.Multiple(() =>
         {
-            Assert.That(element.WasCleared, Is.True);
+            Assert.That(element.WasCleared, Is.False);
             Assert.That(element.EnteredText, Is.EqualTo("Alexander"));
         });
     }
 
     [Test]
-    public void Click_ShouldNotClear_WhenClearFirstIsFalse()
+    public void Type_ShouldNotClear_WhenClearFirstIsFalse()
     {
         var element = new FakeWebElementWrapper();
 
