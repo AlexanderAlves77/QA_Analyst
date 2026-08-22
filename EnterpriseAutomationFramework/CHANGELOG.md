@@ -98,6 +98,20 @@ Este projeto segue os princípios do **Keep a Changelog** e do **Semantic Versio
 - Selenium browser DI registrations
 - Selenium infrastructure tests
 
+- Wait Settings
+- Wait Settings validation
+- Explicit Wait strategy
+- Selenium Wait Strategy
+- Element Actions abstraction
+- Selenium Element Actions
+- Configurable polling interval
+- Presence wait condition
+- Visibility wait condition
+- Clickability wait condition
+- Invisibility wait condition
+- Wait Strategy tests
+- Element Actions tests
+
 
 ### Changed
 
