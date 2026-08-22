@@ -12,7 +12,7 @@ public interface IBrowser : IDisposable
 
     IWaitStrategy Wait { get; }
 
-    IElementFinder Actions { get; }
+    IElementActions Actions { get; }
 
     string CurrentUrl { get; }
 
