@@ -1,5 +1,6 @@
 ﻿using EnterpriseAutomationFramework.Core.Abstractions.Browser;
 using EnterpriseAutomationFramework.Core.Models;
+using OpenQA.Selenium;
 
 namespace EnterpriseAutomationFramework.Infrastructure.Web.Actions;
 
@@ -52,7 +53,7 @@ public sealed class SeleniumElementActions
             _waitStrategy.UntilVisible(locator);
             return true;
         }
-        catch
+        catch (WebDriverTimeoutException)
         {
             return false;
         }
