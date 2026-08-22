@@ -71,13 +71,18 @@
 
 ### Reliability
 
-- [ ] Wait Strategy
-- [ ] Element Actions
-- [ ] Retry Strategy
+- [x] Wait Settings
+- [x] Explicit Wait Strategy
+- [x] Presence Wait
+- [x] Visibility Wait
+- [x] Clickability Wait
+- [x] Invisibility Wait
+- [x] Element Actions
 - [ ] Screenshot Service
+- [ ] Retry Policy
 - [ ] Alert handling
-- [ ] Window and Tab handling
-- [ ] Parallel browser execution
+- [ ] Windows and Tabs
+- [ ] Parallel Browser Execution
 
 ---
 
