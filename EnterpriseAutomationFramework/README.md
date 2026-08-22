@@ -109,6 +109,44 @@ Exemplo conceitual:
 
 O Bootstrap atua como ponto central de composição da infraestrutura e evita que projetos consumidores precisem conhecer os detalhes internos de inicialização.
 
+### Wait Strategy
+
+The Enterprise Automation Framework uses explicit waits as its primary synchronization strategy.
+The Core defines:
+
+- `IWaitStrategy`
+- `IElementActions`
+- `WaitSettings`
+
+The Selenium implementation provides:
+
+- `SeleniumWaitStrategy`
+- `SeleniumElementActions`
+
+Supported wait conditions currently include:
+
+- element presence;
+- element visibility;
+- element clickability;
+- element invisibility.
+
+Wait timeout and polling interval are centrally configurable.
+
+The framework keeps implicit wait disabled by default to avoid mixing implicit and explicit wait strategies.
+
+### Element Actions
+
+Common element interactions are centralized through `IElementActions`.
+Current actions include:
+
+- Click
+- Type
+- Clear
+- GetText
+- IsVisible
+
+This layer combines synchronization and interaction while keeping Selenium-specific details inside Infrastructure.
+
 ### Fail Fast
 
 Configurações e dependências críticas devem ser validadas durante o Startup.
