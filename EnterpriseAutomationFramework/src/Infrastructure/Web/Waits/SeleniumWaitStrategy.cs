@@ -73,7 +73,7 @@ public sealed class SeleniumWaitStrategy : IWaitStrategy
             {
                 var candidate = driver.FindElement(by);
 
-                return candidate.Displayed && candidate.Enable ? candidate : null;
+                return candidate.Displayed && candidate.Enabled ? candidate : null;
             }
             catch (NoSuchElementException)
             {
@@ -102,11 +102,11 @@ public sealed class SeleniumWaitStrategy : IWaitStrategy
             }
             catch (NoSuchElementException)
             {
-                return null;
+                return true;
             }
             catch (StaleElementReferenceException)
             {
-                return null;
+                return true;
             }
         });
     }
