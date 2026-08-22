@@ -36,7 +36,7 @@ public sealed class SeleniumBrowser : IBrowser
 
         Elements = elements ?? throw new ArgumentNullException(nameof(elements));
 
-        Wait = wait ?? throw new ArgumentNullException(nameof(elements));
+        Wait = wait ?? throw new ArgumentNullException(nameof(wait));
 
         Actions = actions ?? throw new ArgumentNullException(nameof(actions));
     }
