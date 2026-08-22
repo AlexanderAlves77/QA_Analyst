@@ -10,6 +10,10 @@ public interface IBrowser : IDisposable
 
     IElementFinder Elements { get; }
 
+    IWaitStrategy Wait { get; }
+
+    IElementFinder Actions { get; }
+
     string CurrentUrl { get; }
 
     string Title { get; }
