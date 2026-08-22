@@ -48,6 +48,10 @@ public class BrowserProviderTests
 
         public IElementFinder Elements => null!;
 
+        public IWaitStrategy Wait => null!;
+
+        public IElementActions Actions => null!;
+
         public string CurrentUrl => string.Empty;
 
         public string Title => string.Empty;
