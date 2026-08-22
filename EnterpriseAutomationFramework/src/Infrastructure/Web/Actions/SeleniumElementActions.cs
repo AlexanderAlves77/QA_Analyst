@@ -4,7 +4,7 @@ using OpenQA.Selenium;
 
 namespace EnterpriseAutomationFramework.Infrastructure.Web.Actions;
 
-public sealed class SeleniumElementActions
+public sealed class SeleniumElementActions : IElementActions
 {
     private readonly IWaitStrategy _waitStrategy;
 
