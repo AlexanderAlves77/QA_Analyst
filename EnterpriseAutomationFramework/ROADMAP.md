@@ -77,12 +77,42 @@
 - [x] Visibility Wait
 - [x] Clickability Wait
 - [x] Invisibility Wait
-- [x] Element Actions
-- [ ] Screenshot Service
+
+### Page Architecture
+
+- [x] Base Page
+- [x] Page Object Model
+- [x] Login Page
+- [x] Base Component
+- [x] Header Component
+- [x] Page and Component composition
+- [x] Page Object unit tests
+- [ ] Page state abstractions
+- [ ] Advanced reusable Components
+- [ ] Tables and pagination Components
+- [ ] Forms and validation Components
+
+### Test Execution
+
+- [ ] Test Base
+- [ ] Browser lifecycle per test
+- [ ] NUnit Setup and TearDown
+- [ ] First real E2E flow
+- [ ] Screenshot on failure
+- [ ] Test execution context
+- [ ] Parallel browser execution
+
+### Advanced Web Infrastructure
+
 - [ ] Retry Policy
 - [ ] Alert handling
 - [ ] Windows and Tabs
-- [ ] Parallel Browser Execution
+- [ ] Frames
+- [ ] JavaScript execution abstraction
+- [ ] File upload
+- [ ] File download
+- [ ] Selenium Grid
+- [ ] Remote execution
 
 ---
 
