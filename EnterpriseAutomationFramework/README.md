@@ -165,6 +165,33 @@ Essa fundação será utilizada pelas próximas infraestruturas do EAF, incluind
 
 ---
 
+## 📄 Page Object Model
+
+The Enterprise Automation Framework uses the Page Object Model to isolate UI structure and behavior from test scenarios.
+Page Objects are responsible for:
+
+- encapsulating element locators;
+- exposing page behaviors;
+- using `IBrowser` abstractions instead of Selenium directly;
+- hiding low-level interaction details from tests;
+- reducing duplication across the test suite.
+
+Current Page infrastructure includes:
+
+- `BasePage`
+- `LoginPage`
+
+Example:
+
+```csharp
+var loginPage = new LoginPage(browser);
+
+loginPage.GoTo(url);
+loginPage.Login(username, password);
+```
+---
+
+
 ## 🛠 Tecnologias
 
 - .NET 8 LTS
