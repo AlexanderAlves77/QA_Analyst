@@ -112,6 +112,18 @@ Este projeto segue os princípios do **Keep a Changelog** e do **Semantic Versio
 - Wait Strategy tests
 - Element Actions tests
 
+- Page Object Model infrastructure
+- Base Page abstraction
+- Login Page Object
+- Web Component infrastructure
+- Base Component abstraction
+- Header Component
+- Encapsulated page locators
+- Page-level navigation and element actions
+- Reusable UI component composition
+- Login Page unit tests using framework abstractions
+- Fake Browser infrastructure for Page Object tests
+
 
 ### Changed
 
